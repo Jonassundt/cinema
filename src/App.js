@@ -1,24 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Toolbar from "./components/Toolbar/Toolbar"
+import Artwork from "./components/Artwork/Artwork"
+import Gallery from "./components/Gallery/Gallery"
+import Footer from "./components/Footer/Footer"
+
+import './index.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="App-header">
+        Prosjekt 2, Gruppe 60
+      </div>
+      {/* TODO: Show components immediately, or display a simple welcome-page initially? */}
+      <div>
+        <Toolbar />
+        <Artwork />
+        <Gallery />
+        <Footer />
+      </div>
     </div>
   );
 }
