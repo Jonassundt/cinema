@@ -1,0 +1,29 @@
+.Poster {
+    background-color: #5d5d5d8e;
+    height: 600px;
+    margin: 30px 0;
+    display: flex;
+    border-radius: 20px;
+}
+
+.PosterFullscreen {
+    position: fixed;
+    top: 6vh;
+    left: 3vw;
+    height: 88vh;
+    width: 94vw;
+    background-color: #252525f6;
+    border-radius: 8px;
+}
+
+.Frame {
+    margin: auto;
+    height: 500px;
+}
+
+.Icon {
+    padding: 20px 40px;
+    text-align: end;
+    font-size: 3em;
+    cursor: pointer;
+}

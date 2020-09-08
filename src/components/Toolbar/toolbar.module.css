@@ -1,0 +1,47 @@
+.Toolbar {
+    padding: 40px;
+    background-color: #222222dc;
+    border-radius: 20px;
+    text-align: center;   
+    margin-bottom: 100px; 
+    display: flex;
+}
+
+.Group {
+    font-size: 1.4em;
+    font-weight: bold;
+    background-color: #4d4d4d86;
+    width: 50px;
+    border-radius: 12px;
+    cursor: pointer;
+    user-select: none;
+    margin: 0 10px;
+}
+
+.Group div:hover {
+    font-size: 1.2em;
+    margin-top: -0.12em;
+    margin-bottom: -0.12em;
+}
+
+.Button {
+    border: 0;
+    background-color: #4d4d4d86;
+    border-radius: 12px;
+    cursor: pointer;
+    user-select: none;
+    margin: 0 10px;
+    padding: 35px 25px;
+    transition: 0.1s;
+    min-width: 75px;
+}
+
+.Group:hover,
+.Button:hover {
+    background-color: rgba(119, 119, 119, 0.525);
+}
+
+.Icon {
+    width: 30px;
+    height: 30px;
+}
