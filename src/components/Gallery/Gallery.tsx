@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import styles from "./gallery.module.css"
 
@@ -11,9 +11,10 @@ function Thumbnail() {
 }
 
 function Gallery() {
+
     return (
         <div className={styles.Gallery}>
-            {[0, 1, 2, 3].map((image, id) => <Thumbnail key={id} />)}
+            {[0, 1, 2, 3].map((image, id) => <Thumbnail key={id}/>)}
             <p>
                 TODO: Show all posters here, for the user to hover and click
             </p>
