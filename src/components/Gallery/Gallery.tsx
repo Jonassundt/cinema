@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
+
+import Parameters from "../../Parameters";
 
 import styles from "./gallery.module.css"
 
@@ -11,13 +13,11 @@ function Thumbnail() {
 }
 
 function Gallery() {
+    const { params, setParams } = useContext(Parameters);
 
     return (
         <div className={styles.Gallery}>
-            {[0, 1, 2, 3].map((image, id) => <Thumbnail key={id}/>)}
-            <p>
-                TODO: Show all posters here, for the user to hover and click
-            </p>
+            {[0, 1, 2, 3, 4, 5].map((image, id) => <Thumbnail key={id} />)}
         </div>
     );
 }

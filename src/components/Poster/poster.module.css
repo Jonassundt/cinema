@@ -1,7 +1,6 @@
 .Poster {
     background-color: #5d5d5d8e;
     height: auto;
-    margin: 30px 0;
     display: flex;
     align-items: center;
     border-radius: 20px;
@@ -19,7 +18,8 @@
 
 .Frame {
     margin: auto;
-    height: auto;
+    height: 1000px;
+    transition: 1s;
 }
 
 .Icon {
@@ -29,18 +29,27 @@
     cursor: pointer;
 }
 
-.Image {
-    height: 1000px;
-    width: 750px;
-}
-
 .ArrowButtons {
-    height: 15vh;
-    width: 15vw;
+    width: 90px;
+    filter: opacity(40%);
+    margin: 0 15px;
+    transition: 0.4s;
+    transition-property: transform;
 }
 
 .ArrowButtons:hover {
-    height: 17vh;
-    width: 17vw;
-    fill:red;
+    width: 120px;
+    filter: opacity(100%);
+    margin: 0;
+    cursor: pointer;
+    transform: rotate(360deg);
+}
+
+.Description {
+    margin-top: 20px;
+    padding: 60px 100px 60px 100px;
+    border-radius: 20px;
+    color: rgb(189, 189, 189);
+    background: #3333338e;
+    line-height: 1.6em;
 }
