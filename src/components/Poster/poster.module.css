@@ -1,113 +1,109 @@
-.Poster, .PosterFullscreen {
-    background-color: #5d5d5d8e;
-    height: auto;
-    display: flex;
-    align-items: center;
-    border-radius: 20px;
-    left: 45vw;
-    min-width: 400px;
+.Poster,
+.PosterFullscreen {
+  background-color: #5d5d5d8e;
+  height: auto;
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  left: 45vw;
+  min-width: 400px;
 }
 
 .PosterFullscreen {
-    background-color: #5d5d5d8e;
-    min-width: 90%;
-    position: absolute;
-    left: 45%;
-    margin-left: -40%;
-    border-radius: 12px;
+  background-color: #5d5d5d8e;
+  min-width: 90%;
+  position: absolute;
+  left: 45%;
+  margin-left: -40%;
+  border-radius: 12px;
 }
 
-.Frame, .LeftAnimationFrame, .RightAnimationFrame {
-    margin: auto;
-    height: 800px;
+.Frame,
+.LeftAnimationFrame,
+.RightAnimationFrame {
+  margin: auto;
+  height: 800px;
 }
 
-.PosterFullscreen .Frame, .PosterFullscreen .LeftAnimationFrame, .PosterFullscreen .RightAnimationFrame {
-    height: 1500px;
+.PosterFullscreen .Frame,
+.PosterFullscreen .LeftAnimationFrame,
+.PosterFullscreen .RightAnimationFrame {
+  height: 1500px;
 }
 
 .LeftAnimationFrame + .Frame {
-    animation: fadein;
-    animation-duration: 3s;
+  animation: fadein;
+  animation-duration: 3s;
 }
 
 .Icon {
-    padding: 20px 40px;
-    text-align: end;
-    font-size: 3em;
-    cursor: pointer;
+  padding: 20px 40px;
+  text-align: end;
+  font-size: 3em;
+  cursor: pointer;
 }
 
 .ArrowButtons {
-    width: 90px;
-    filter: opacity(40%);
-    margin: 0 15px;
-    transition: 0.2s;
+  width: 90px;
+  filter: opacity(40%);
+  margin: 0 15px;
+  transition: 0.2s;
 }
 
 .ArrowButtons:hover {
-    width: 120px;
-    filter: opacity(100%);
-    margin: 0;
-    cursor: pointer;
+  width: 120px;
+  filter: opacity(100%);
+  margin: 0;
+  cursor: pointer;
 }
 
-.Description, .DescriptionFullscreen {
-    margin-top: 20px;
-    padding: 60px 100px 60px 100px;
-    border-radius: 20px;
-    color: rgb(189, 189, 189);
-    background: #3333338e;
-    line-height: 1.6em;
+.Description,
+.DescriptionFullscreen {
+  margin-top: 20px;
+  padding: 60px 100px 60px 100px;
+  border-radius: 20px;
+  color: rgb(189, 189, 189);
+  background: #3333338e;
+  line-height: 1.6em;
 }
 
 .DescriptionFullscreen {
-    position: absolute;
-    top: 1640px;
-    margin-top: 140px;
-    max-width: 80%;
-    left: 45%;
-    margin-left: -40%;
-    border-radius: 12px;
+  position: absolute;
+  top: 1640px;
+  margin-top: 140px;
+  max-width: 80%;
+  left: 45%;
+  margin-left: -40%;
+  border-radius: 12px;
 }
 
 @keyframes left {
-    from {
-        margin-left: 0;
-        opacity: 100%;
-     }
-     to {
-        margin-left: -830px;
-        opacity: 0;
-     }
+  from {
+    margin-left: 0;
+    opacity: 100%;
+  }
+  to {
+    margin-left: -830px;
+    opacity: 0;
+  }
 }
 
 @keyframes right {
-    from {
-        margin-right: 0;
-        opacity: 100%;
-     }
-     to {
-        margin-right: -830px;
-        opacity: 0;
-     }
+  from {
+    margin-right: 0;
+    opacity: 100%;
+  }
+  to {
+    margin-right: -830px;
+    opacity: 0;
+  }
 }
 
 @keyframes fadein {
-    from {
-        opacity: 0;
-     }
-     to {
-        opacity: 100%;
-     }
-}
-
-.LeftAnimationFrame {
-    animation: left;
-    animation-duration: 1s;
-}
-
-.RightAnimationFrame {
-    animation: right;
-    animation-duration: 1s;
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100%;
+  }
 }
