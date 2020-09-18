@@ -1,10 +1,16 @@
-.Toolbar {
+.Toolbar, .ToolbarFullscreen {
     padding: 30px;
     background: #2f2f2f8e;
     border-radius: 20px;
     text-align: center;   
     margin-bottom: 100px; 
     display: flex;
+    transition: 0.8s;
+}
+
+.ToolbarFullscreen {
+    margin-bottom: 40px;
+    margin-top: 40px;
 }
 
 .Row {

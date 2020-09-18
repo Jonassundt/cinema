@@ -15,7 +15,7 @@ function Toolbar() {
 
     return (
         <div>
-            <div className={styles.Toolbar}>
+            <div className={params.fullscreen ? styles.ToolbarFullscreen : styles.Toolbar}>
                 {/* Lyssetting */}
                 <div>
                     <img className={styles.Icon} src={"/icons/brightness.svg"} alt="" />

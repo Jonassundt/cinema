@@ -24,15 +24,19 @@ function App() {
     <Parameters.Provider value={providerValue}>
       <div className="Background" style={{ backgroundColor: `rgb(0,0,${params.light})` }}>
         <div className="App">
-          <div className="App-header">
-            Prosjekt 2, Gruppe 60
-      </div>
+          {params.fullscreen ? <div className="TopRow" /> :
+            <div className="App-header">
+              Prosjekt 2, Gruppe 60
+      </div>}
           {/* TODO: Show components immediately, or display a simple welcome-page initially? */}
           <div>
             <Toolbar />
             <Poster />
-            <Gallery />
-            <Footer />
+            {params.fullscreen ? null :
+              <div>
+                <Gallery />
+                <Footer />
+              </div>}
           </div>
         </div>
       </div></Parameters.Provider>
