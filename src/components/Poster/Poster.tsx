@@ -45,11 +45,29 @@ function Poster() {
     return;
   };
 
-  useEffect(() => {
-    document.addEventListener(
-      "keydown",
-      (event) => keyboardEvent(event.keyCode),
-      false
+    return (
+        <div>
+            <div className={params.fullscreen ? styles.PosterFullscreen : styles.Poster}>
+                <img
+                    className={params.posterIndex > 0 ? styles.ArrowButtons : styles.ArrowGrayed}
+                    src="icons/leftarrow.svg"
+                    alt="left arrow"
+                    onClick={prevPoster}
+                />
+                <div className={leftAnimation ? styles.LeftAnimation : rightAnimation ? styles.RightAnimation : styles.Frame} style={{ filter: `grayscale(${params.color ? 0 : 1})` }}>
+                    {posters[params.posterIndex]}
+                </div>
+                <img
+                    className={params.posterIndex < posters.length - 1 ? styles.ArrowButtons : styles.ArrowGrayed}
+                    src="icons/rightarrow.svg"
+                    alt="right arrow"
+                    onClick={nextPoster}
+                />
+            </div>
+            <div className={params.fullscreen ? styles.DescriptionFullscreen : styles.Description}>
+                {leftAnimation || rightAnimation ? null : <div className={styles.DescriptionText} > 
+                <FetchMovie></FetchMovie>
+                 </div>}    </div></div>
     );
   });
 
