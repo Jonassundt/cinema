@@ -4,6 +4,8 @@ import { ReactComponent as Bond } from "../Images/bond.svg";
 import { ReactComponent as Interstellar } from "../Images/interstellar.svg";
 import { ReactComponent as Batman } from "../Images/batman.svg";
 import { ReactComponent as Inception } from "../Images/Inception.svg";
+import { ReactComponent as Starwars } from "../Images/Starwars.svg";
+import { ReactComponent as Shawshank } from "../Images/Shawshank.svg";
 
 import Parameters from "../../Parameters";
 
@@ -13,7 +15,9 @@ function Poster() {
     let height = params.fullscreen ? 1500 : 800;
     let width = (height / 1.3333);
 
-    const posters = [<Bond height={height} width={width} />, <Inception height={height} width={width} />, <Interstellar height={height} width={width} />, <Batman height={height} width={width} />];
+    const posters = [<Bond height={height} width={width} />, <Inception height={height} width={width} />,
+         <Interstellar height={height} width={width} />, <Batman height={height} width={width} />,
+         <Shawshank height={height} width={width} />, <Starwars height={height} width={width} />];
 
     const setPosterIndex = (posterIndex: number) => setParams({ ...params, posterIndex })
     const [leftAnimation, setLeftAnimation] = useState(false)

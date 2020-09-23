@@ -5,6 +5,8 @@ import { ReactComponent as Bond } from "../Images/bond.svg";
 import { ReactComponent as Interstellar } from "../Images/interstellar.svg";
 import { ReactComponent as Batman } from "../Images/batman.svg";
 import { ReactComponent as Inception } from "../Images/Inception.svg";
+import { ReactComponent as Starwars } from "../Images/Starwars.svg";
+import { ReactComponent as Shawshank } from "../Images/Shawshank.svg";
 
 import styles from "./gallery.module.css"
 
@@ -13,7 +15,9 @@ function Gallery() {
 
     const setPosterIndex = (posterIndex: number) => setParams({ ...params, posterIndex })
 
-    const posters = [<Bond height="400" width="300" />, <Inception height="400" width="265" />, <Interstellar height="400" width="300" />, <Batman height="400" width="265" />];
+    const posters = [<Bond height="400" width="300" />, <Inception height="400" width="265" />,
+     <Interstellar height="400" width="300" />, <Batman height="400" width="265" />,
+     <Shawshank height="400" width="300" />, <Starwars height="400" width="300" />];
 
     return (
         <div className={styles.Gallery}>
