@@ -129,3 +129,17 @@
     animation: right;
     animation-duration: 1.2s;
 }
+
+.fetchMovie {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;   
+}
+
+.fetchMovieSubdiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
