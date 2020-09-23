@@ -1,0 +1,24 @@
+.BondAnimation .cls-9 {
+  stroke: red;
+  stroke-width: 10px;
+}
+
+.InceptionAnimation {
+  border: 4px solid rgb(0, 255, 34);
+}
+
+.InterstellarAnimation {
+  border: 4px solid rgb(25, 0, 255);
+}
+
+.BatmanAnimation {
+  border: 4px solid rgb(194, 194, 194);
+}
+
+.ShawshankAnimation {
+  border: 4px solid rgb(72, 255, 0);
+}
+
+.StarwarsAnimation {
+  border: 4px solid rgb(22, 14, 14);
+}
