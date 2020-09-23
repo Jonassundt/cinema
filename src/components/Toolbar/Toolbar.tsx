@@ -1,42 +1,55 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import styles from './toolbar.module.css';
 
-interface ToolbarProps {
-    changeLight: Function,
-    changeFullscreen: Function
-}
+import Parameters from "../../Parameters";
 
-function Toolbar(props: ToolbarProps) {
+function Toolbar() {
+    const { params, setParams } = useContext(Parameters);
+    const setLight = (light: Number) => setParams({ ...params, light })
+    const setVolume = (volume: Number) => setParams({ ...params, volume })
+    const setAnimation = () => setParams({ ...params, animation: !params.animation })
+    const setColor = () => setParams({ ...params, color: !params.color })
+    const setFullscreen = () => setParams({ ...params, fullscreen: !params.fullscreen })
+    const setSlideshow = () => setParams({ ...params, slidewhow: !params.slideshow })
+
     return (
-        <div className={styles.Toolbar}>
-            {/* Lyssetting */}
-            <div>
-                <img className={styles.Icon} src={"/icons/brightness.svg"} alt="" />
-                <div className={styles.Group}>
-                    <div onClick={() => props.changeLight(true)}>+</div>
-                    <div onClick={() => props.changeLight(false)}>-</div>
-                </div></div>
-            <div>
-                {/* Volum */}
-                <img className={styles.Icon} src={"/icons/volume.svg"} alt="" />
-                <div className={styles.Group}>
-                    <div onClick={() => { }}>+</div>
-                    <div onClick={() => { }}>-</div>
+        <div>
+            <div className={params.fullscreen ? styles.ToolbarFullscreen : styles.Toolbar}>
+                {/* Lyssetting */}
+                <div>
+                    <img className={styles.Icon} src={"/icons/brightness.svg"} alt="" />
+                    <div className={styles.Group}>
+                        <div onClick={() => params.light < 60 && setLight(params.light + 5)}>+</div>
+                        <div onClick={() => params.light > 30 && setLight(params.light - 5)}>-</div>
+                    </div></div>
+                <div>
+                    {/* Volum */}
+                    <img className={styles.Icon} src={"/icons/volume.svg"} alt="" />
+                    <div className={styles.Group}>
+                        <div onClick={() => params.volume < 9 && setVolume(params.volume + 1)}>+</div>
+                        <div onClick={() => params.volume > 0 && setVolume(params.volume - 1)}>-</div>
+                    </div>
+                </div>
+                {/* Animasjoner */}
+                <div className={styles.Button} onClick={setAnimation}>Animasjon</div>
+                {/* Sort-hvitt */}
+                <div className={styles.Button} onClick={setColor}>Fargefilm</div>
+                {/* Auto-scroll */}
+                <div className={styles.Button} onClick={setSlideshow}>Slideshow</div>
+                {/* Fullskjerm */}
+                <div className={styles.Button} onClick={setFullscreen}>Fullskjerm</div>
+                {/* Favoritt */}
+                <div className={styles.Row}>
+                    <div className={styles.Toggle}>Lagre favoritt</div>
+                    {/* Favoritter */}
+                    <div className={styles.Toggle}>Se favoritter</div>
                 </div>
             </div>
-            {/* Animasjoner */}
-            <div className={styles.Button}>Animasjon</div>
-            {/* Bakgrunnslys */}
-            <div className={styles.Button}>Ambilight</div>
-            {/* Sort-hvitt */}
-            <div className={styles.Button}>Fargefilm</div>
-            {/* Auto-scroll */}
-            <div className={styles.Button}>Veksle</div>
-            {/* Full meny */}
-            <div className={styles.Button}>Bibliotek</div>
-            {/* Fullskjerm */}
-            <div className={styles.Button} onClick={() => props.changeFullscreen(true)}>Fullskjerm</div>
+            <div className={styles.SpotRow} style={{ opacity: params.light < 45 ? 0 : 1 }}>
+                <div className={styles.Spotlight} />
+                <div className={styles.Spotlight} />
+            </div>
         </div>
     );
 }
