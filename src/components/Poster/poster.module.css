@@ -1,131 +1,135 @@
-.Poster, .PosterFullscreen {
-    background-color: #5d5d5d8e;
-    height: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 20px;
-    min-width: 400px;
-    overflow: hidden;
+.Poster,
+.PosterFullscreen {
+  background-color: #5d5d5d8e;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 20px;
+  min-width: 400px;
+  overflow: hidden;
 }
 
 .PosterFullscreen {
-    background-color: #5d5d5d8e;
-    min-width: 90%;
-    position: absolute;
-    left: 45%;
-    margin-left: -40%;
-    border-radius: 12px;
+  background-color: #5d5d5d8e;
+  min-width: 90%;
+  position: absolute;
+  left: 45%;
+  margin-left: -40%;
+  border-radius: 12px;
 }
 
-.Frame, .LeftAnimation, .RightAnimation {
-    height: 800px;
+.Frame,
+.LeftAnimation,
+.RightAnimation {
+  height: 800px;
 }
 
-.PosterFullscreen .Frame, .PosterFullscreen .LeftAnimation, .PosterFullscreen .RightAnimation {
-    height: 1500px;
+.PosterFullscreen .Frame,
+.PosterFullscreen .LeftAnimation,
+.PosterFullscreen .RightAnimation {
+  height: 1500px;
 }
 
 .Icon {
-    padding: 20px 40px;
-    text-align: end;
-    font-size: 3em;
-    cursor: pointer;
+  padding: 20px 40px;
+  text-align: end;
+  font-size: 3em;
+  cursor: pointer;
 }
 
-.ArrowButtons, .ArrowGrayed {
-    width: 90px;
-    filter: opacity(40%);
-    margin: 0 15px;
-    transition: 0.2s;
+.ArrowButtons,
+.ArrowGrayed {
+  width: 90px;
+  filter: opacity(40%);
+  margin: 0 15px;
+  transition: 0.2s;
 }
 
 .ArrowGrayed {
-    width: 90px;
-    filter: opacity(10%);
-    margin: 0 15px;
-    transition: 0.2s;
+  width: 90px;
+  filter: opacity(10%);
+  margin: 0 15px;
+  transition: 0.2s;
 }
 
 .ArrowButtons:hover {
-    width: 120px;
-    filter: opacity(100%);
-    margin: 0;
-    cursor: pointer;
+  width: 120px;
+  filter: opacity(100%);
+  margin: 0;
+  cursor: pointer;
 }
 
-.Description, .DescriptionFullscreen {
-    margin-top: 20px;
-    padding: 60px 100px 60px 100px;
-    border-radius: 20px;
-    color: rgb(189, 189, 189);
-    background: #3333338e;
-    line-height: 1.6em;
-    min-height: 150px;
+.Description,
+.DescriptionFullscreen {
+  margin-top: 20px;
+  padding: 60px 100px 60px 100px;
+  border-radius: 20px;
+  color: rgb(189, 189, 189);
+  background: #3333338e;
+  line-height: 1.6em;
+  min-height: 150px;
 }
 
 .DescriptionFullscreen {
-    position: absolute;
-    top: 1640px;
-    margin-top: 140px;
-    max-width: 80%;
-    left: 45%;
-    margin-left: -40%;
-    border-radius: 12px;
+  position: absolute;
+  top: 1640px;
+  margin-top: 140px;
+  max-width: 80%;
+  left: 45%;
+  margin-left: -40%;
+  border-radius: 12px;
 }
 
 .DescriptionText {
-    animation: fadein;
-    animation-duration: 2s;
+  animation: fadein 2s;
 }
 
 @keyframes left {
-    0% {
-        margin-left: 0;
-        opacity: 100%;
-     }
-     40% {
-        margin-left: -200%;
-        opacity: 0;
-        height: 500px;
-     }
-     100% {
-        margin-left: 0;
-        opacity: 100%;
-     }
+  0% {
+    margin-left: 0;
+    opacity: 100%;
+  }
+  40% {
+    margin-left: -200%;
+    opacity: 0;
+    height: 500px;
+  }
+  100% {
+    margin-left: 0;
+    opacity: 100%;
+  }
 }
 
 @keyframes right {
-    0% {
-        margin-right: 0;
-        opacity: 100%;
-     }
-     40% {
-        margin-right: -200%;
-        opacity: 0; 
-        height: 500px;
-     }
-     100% {
-        margin-right: 0;
-        opacity: 100%;
-     }
+  0% {
+    margin-right: 0;
+    opacity: 100%;
+  }
+  40% {
+    margin-right: -200%;
+    opacity: 0;
+    height: 500px;
+  }
+  100% {
+    margin-right: 0;
+    opacity: 100%;
+  }
 }
 
 @keyframes fadein {
-    0% {
-        opacity: 0;
-     }
-     100% {
-        opacity: 100%;
-     }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
 }
 
 .LeftAnimation {
-    animation: left;
-    animation-duration: 1.2s;
+  animation: left 1.2s ease-in-out;
 }
 
 .RightAnimation {
-    animation: right;
-    animation-duration: 1.2s;
+  animation: right 1.2s ease-in-out;
 }
