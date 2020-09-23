@@ -7,6 +7,7 @@ const initialState = {
     color: true,
     fullscreen: false,
     slideshow: false,
+    posterIndex: 0
 }
 
 const Parameters = React.createContext({
