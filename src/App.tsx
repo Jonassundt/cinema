@@ -16,6 +16,7 @@ function App() {
     color: true,
     fullscreen: false,
     slideshow: false,
+    //runningSlideshow: false,
     posterIndex: 0
   });
 

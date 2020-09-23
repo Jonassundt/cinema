@@ -3,10 +3,11 @@ import React from "react";
 const initialState = {
     light: 30,
     volume: 0,
-    animation: true,
+    animation: false,
     color: true,
     fullscreen: false,
     slideshow: false,
+    //runningSlideshow: false,
     posterIndex: 0
 }
 

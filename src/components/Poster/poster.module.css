@@ -33,16 +33,9 @@
     cursor: pointer;
 }
 
-.ArrowButtons, .ArrowGrayed {
+.ArrowButtons {
     width: 90px;
     filter: opacity(40%);
-    margin: 0 15px;
-    transition: 0.2s;
-}
-
-.ArrowGrayed {
-    width: 90px;
-    filter: opacity(10%);
     margin: 0 15px;
     transition: 0.2s;
 }

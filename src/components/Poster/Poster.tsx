@@ -20,28 +20,26 @@ function Poster() {
          <Shawshank height={height} width={width} />, <Starwars height={height} width={width} />];
 
     const setPosterIndex = (posterIndex: number) => setParams({ ...params, posterIndex })
+    const setRunningSlideshow = (runningSlideshow: boolean) => setParams({ ...params, runningSlideshow})
     const [leftAnimation, setLeftAnimation] = useState(false)
     const [rightAnimation, setRightAnimation] = useState(false)
+    let myInterval: any = null;
 
     const prevPoster = () => {
         if (leftAnimation || rightAnimation) return;
-        if (params.posterIndex > 0) {
-            setLeftAnimation(true);
-            setTimeout(() =>
-                setPosterIndex(params.posterIndex - 1), 500);
-            setTimeout(() => setLeftAnimation(false), 1200)
-        }
+        setLeftAnimation(true);
+        setTimeout(() =>
+            setPosterIndex((params.posterIndex + posters.length -1) % posters.length), 500); //Ensures that modulo works correctly.
+        setTimeout(() => setLeftAnimation(false), 1200);
     }
 
 
     const nextPoster = () => {
         if (leftAnimation || rightAnimation) return;
-        if (params.posterIndex < posters.length - 1) {
-            setRightAnimation(true);
+        setRightAnimation(true);
             setTimeout(() =>
-                setPosterIndex(params.posterIndex + 1), 500);
+                setPosterIndex((params.posterIndex + 1) % posters.length), 500);
             setTimeout(() => setRightAnimation(false), 1200)
-        }
     }
 
     const keyboardEvent = (c: Number) => {
@@ -50,15 +48,44 @@ function Poster() {
         return;
     }
 
+    /*
+    const runSlideshow = () => {
+        setRunningSlideshow(true);
+        myInterval = setInterval(nextPoster, 4000);
+        //console.log("runSlideshow method is called.");
+    }
+
+    const stopSlideshow = () => {
+        setRunningSlideshow(false);
+        clearInterval(myInterval);
+        //console.log("stopSlideshow method is called.");
+    }
+    */
+
+
     useEffect(() => {
         document.addEventListener("keydown", event => keyboardEvent(event.keyCode), false);
-    });
+
+        /*
+        if(!params.runningSlideshow && params.slideshow){ //hvis det ikke kjøres slideshow nå, og slideshow-variabel er sann, start slideshow
+            runSlideshow();
+        }
+        else if(params.runningSlideshow && !params.slideshow){ //hvis det kjøres slideshow nå, og slideshow-variabel er false -> stopp slideshow
+            stopSlideshow();
+        }
+        else{
+            //do nothing
+        }
+        */
+        
+        
+    }, [params.slideshow]);
 
     return (
         <div>
             <div className={params.fullscreen ? styles.PosterFullscreen : styles.Poster}>
                 <img
-                    className={params.posterIndex > 0 ? styles.ArrowButtons : styles.ArrowGrayed}
+                    className={styles.ArrowButtons}
                     src="icons/leftarrow.svg"
                     alt="left arrow"
                     onClick={prevPoster}
@@ -67,7 +94,7 @@ function Poster() {
                     {posters[params.posterIndex]}
                 </div>
                 <img
-                    className={params.posterIndex < posters.length - 1 ? styles.ArrowButtons : styles.ArrowGrayed}
+                    className={styles.ArrowButtons}
                     src="icons/rightarrow.svg"
                     alt="right arrow"
                     onClick={nextPoster}
