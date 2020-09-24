@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 
-import Parameters from "../../Parameters";
-
 import posterImages from "../Images";
+
+import Parameters from "../../Parameters";
 
 import styles from "./gallery.module.css";
 

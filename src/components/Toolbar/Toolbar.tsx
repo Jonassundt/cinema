@@ -2,9 +2,9 @@ import React, { useContext, useState, useEffect } from 'react';
 
 import posterImages from "../Images";
 
-import styles from './toolbar.module.css';
-
 import Parameters from "../../Parameters";
+
+import styles from './toolbar.module.css';
 
 function Toolbar() {
     const { params, setParams } = useContext(Parameters);
@@ -36,7 +36,7 @@ function Toolbar() {
             setSlideShowIntervalId(0);
             setSlideshowBar(0)
         }
-    }, [params.slideshow])
+    }, [params.slideshow, slideShowIntervalId])
 
     return (
         <div>
@@ -54,7 +54,7 @@ function Toolbar() {
                     <img className={styles.Icon} src={"/icons/volume.svg"} alt="" />
                     <div className={styles.Group}>
                         <div onClick={() => params.volume < 9 && setVolume(params.volume + 1)}>+</div>
-                        <div>{params.volume}</div>
+                        <div>{params.volume * 10}</div>
                         <div onClick={() => params.volume > 0 && setVolume(params.volume - 1)}>-</div>
                     </div>
                 </div>
@@ -67,7 +67,8 @@ function Toolbar() {
                     <div className={styles.SlideBar} style={{ width: `${(slideshowBar / 15) * 100}%` }}>
                         <div className={styles.SlideText}>{!params.slideshow ? "Slideshow" :
                             <div>Neste: <strong>{posterImages[(params.posterIndex + 1) % posterImages.length].props.name}</strong></div>}
-                        </div> </div>
+                        </div>
+                    </div>
                 </div>
                 {/* Fullskjerm */}
                 <div className={styles.Button} onClick={setFullscreen}>Fullskjerm</div>

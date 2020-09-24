@@ -1,7 +1,8 @@
 import React from "react";
-import styles from "./fetchData.module.css";
 
 import Parameters from "../../Parameters";
+
+import styles from "./fetchData.module.css";
 
 //bond-skyfall, inception, interstellar, batman, shawshank, starwars
 const movieIds = [37724, 27205, 157336, 272, 278, 1891];

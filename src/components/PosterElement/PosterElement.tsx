@@ -1,8 +1,8 @@
 import React from "react";
 
-import "./posterElements.css";
-
 import Parameters from "../../Parameters";
+
+import "./posterElements.css";
 
 interface PosterElementProps {
   poster: any;
@@ -30,6 +30,7 @@ class PosterElement extends React.Component<
     if (!this.state.playing) {
       this.state.audio.load();
       this.state.audio.play();
+      this.state.audio.loop = true;
       this.state.audio.volume = this.context.params.volume / 10;
       this.setState({ playing: true });
     } else {

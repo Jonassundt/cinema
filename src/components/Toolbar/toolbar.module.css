@@ -1,5 +1,5 @@
 .Toolbar, .ToolbarFullscreen {
-    padding: 30px;
+    padding: 20px;
     background: #2f2f2f8e;
     border-radius: 20px;
     text-align: center;   
@@ -52,9 +52,9 @@
 
 
 .Toggle {
-    background: #88888886;
+    background: rgba(133, 133, 133, 0.525);
     border-radius: 0 8px 8px 0;
-    margin: 10px 0;
+    margin: 10px 10px 0 0;
     min-width: 50px;
     padding: 35px 20px;
 }
@@ -99,7 +99,7 @@
 
 .SlideBar {
     background: #88888886;
-    padding: 38px 0;
+    padding: 35px 0 50px 0;
     border-radius: 8px 0 0 8px;
 }
 

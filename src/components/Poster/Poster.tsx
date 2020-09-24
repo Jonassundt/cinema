@@ -1,5 +1,4 @@
 import React, { useState, useContext, useEffect } from "react";
-import styles from "./poster.module.css";
 
 import PosterElement from "../PosterElement/PosterElement";
 import FetchMovie from "./fetchData";
@@ -7,6 +6,9 @@ import FetchMovie from "./fetchData";
 import posterImages from "../Images";
 
 import Parameters from "../../Parameters";
+
+import styles from "./poster.module.css";
+
 
 function Poster() {
   const { params, setParams } = useContext(Parameters);
@@ -91,7 +93,7 @@ function Poster() {
     else if (!params.slideshow && slideshowId) { //hvis det kjøres slideshow nå, og slideshow-variabel er false -> stopp slideshow
       stopSlideshow();
     }
-    else if (params.slideshow && slideshowIndex) {
+    else if (params.slideshow && slideshowIndex > -1) {
       nextPoster(slideshowIndex);
     }
   }, [params.slideshow, params.posterIndex, slideshowId, slideshowIndex, setSlideshowIndex]);
