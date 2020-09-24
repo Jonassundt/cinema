@@ -11,7 +11,7 @@ function Toolbar() {
     const setAnimation = () => setParams({ ...params, animation: !params.animation })
     const setColor = () => setParams({ ...params, color: !params.color })
     const setFullscreen = () => setParams({ ...params, fullscreen: !params.fullscreen })
-    const setSlideshow = () => setParams({ ...params, slidewhow: !params.slideshow })
+    const toggleSlideshow = () => setParams({ ...params, slideshow: !params.slideshow });
 
     return (
         <div>
@@ -35,8 +35,8 @@ function Toolbar() {
                 <div className={styles.Button} onClick={setAnimation}>Animasjon</div>
                 {/* Sort-hvitt */}
                 <div className={styles.Button} onClick={setColor}>Fargefilm</div>
-                {/* Auto-scroll */}
-                <div className={styles.Button} onClick={setSlideshow}>Slideshow</div>
+                {/* Slideshow */}
+                <div className={styles.Button} onClick={toggleSlideshow}>Slideshow</div>
                 {/* Fullskjerm */}
                 <div className={styles.Button} onClick={setFullscreen}>Fullskjerm</div>
                 {/* Favoritt */}

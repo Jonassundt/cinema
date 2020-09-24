@@ -13,33 +13,33 @@ function Poster() {
 
   let height = params.fullscreen ? 1500 : 800;
 
-  const setPosterIndex = (posterIndex: number) =>
-    setParams({ ...params, posterIndex });
-  const [leftAnimation, setLeftAnimation] = useState(false);
-  const [rightAnimation, setRightAnimation] = useState(false);
-  const [loading, setLoading] = useState(true);
-
   const posters = posterImages.map((poster) => (
     <PosterElement poster={poster} height={height} />
   ));
 
+  const setPosterIndex = (posterIndex: number) => setParams({ ...params, posterIndex });
+  const [leftAnimation, setLeftAnimation] = useState(false);
+  const [rightAnimation, setRightAnimation] = useState(false);
+  const [loading, setLoading] = useState(true);
+
+  const setRunningSlideshow = (runningSlideshow: boolean) => setParams({ ...params, runningSlideshow })
+  let myInterval: any = null;
+
   const prevPoster = () => {
     if (leftAnimation || rightAnimation) return;
-    if (params.posterIndex > 0) {
-      setLeftAnimation(true);
-      setTimeout(() => setPosterIndex(params.posterIndex - 1), 500);
-      setTimeout(() => setLeftAnimation(false), 1200);
-    }
-  };
+    setLeftAnimation(true);
+    setTimeout(() =>
+      setPosterIndex((params.posterIndex + posters.length - 1) % posters.length), 500); //Ensures that modulo works correctly.
+    setTimeout(() => setLeftAnimation(false), 1200);
+  }
 
   const nextPoster = () => {
     if (leftAnimation || rightAnimation) return;
-    if (params.posterIndex < posters.length - 1) {
-      setRightAnimation(true);
-      setTimeout(() => setPosterIndex(params.posterIndex + 1), 500);
-      setTimeout(() => setRightAnimation(false), 1200);
-    }
-  };
+    setRightAnimation(true);
+    setTimeout(() =>
+      setPosterIndex((params.posterIndex + 1) % posters.length), 500);
+    setTimeout(() => setRightAnimation(false), 1200)
+  }
 
   const playSound = () => {
     let number = Math.random();
@@ -68,14 +68,40 @@ function Poster() {
     return;
   };
 
+  /*
+  const runSlideshow = () => {
+      setRunningSlideshow(true);
+      myInterval = setInterval(nextPoster, 4000);
+      //console.log("runSlideshow method is called.");
+  }
+
+  const stopSlideshow = () => {
+      setRunningSlideshow(false);
+      clearInterval(myInterval);
+      //console.log("stopSlideshow method is called.");
+  }
+  */
+
+
   useEffect(() => {
-    document.addEventListener(
-      "keydown",
-      (event) => keyboardEvent(event.keyCode),
-      false
-    );
+    document.addEventListener("keydown", event => keyboardEvent(event.keyCode), false);
+
+    /*
+    if(!params.runningSlideshow && params.slideshow){ //hvis det ikke kjøres slideshow nå, og slideshow-variabel er sann, start slideshow
+        runSlideshow();
+    }
+    else if(params.runningSlideshow && !params.slideshow){ //hvis det kjøres slideshow nå, og slideshow-variabel er false -> stopp slideshow
+        stopSlideshow();
+    }
+    else{
+        //do nothing
+    }
+    */
+
     setTimeout(() => setLoading(false), 4900);
+
   });
+
 
   if (loading) {
     return (
@@ -102,55 +128,31 @@ function Poster() {
     )
   }
 
-
   return (
     <div>
-      <div
-        className={params.fullscreen ? styles.PosterFullscreen : styles.Poster}
-      >
+      <div className={params.fullscreen ? styles.PosterFullscreen : styles.Poster}>
         <img
-          className={
-            params.posterIndex > 0 ? styles.ArrowButtons : styles.ArrowGrayed
-          }
+          className={styles.ArrowButtons}
           src="icons/leftarrow.svg"
           alt="left arrow"
           onClick={() => { prevPoster(); playSound(); }}
         />
-        <div
-          className={
-            leftAnimation
-              ? styles.LeftAnimation
-              : rightAnimation
-                ? styles.RightAnimation
-                : styles.Frame
-          }
-          style={{ filter: `grayscale(${params.color ? 0 : 1})` }}
-        >
+        <div className={leftAnimation ? styles.LeftAnimation : rightAnimation ? styles.RightAnimation : styles.Frame} style={{ filter: `grayscale(${params.color ? 0 : 1})` }}>
           {posters[params.posterIndex]}
         </div>
         <img
-          className={
-            params.posterIndex < posters.length - 1
-              ? styles.ArrowButtons
-              : styles.ArrowGrayed
-          }
+          className={styles.ArrowButtons}
           src="icons/rightarrow.svg"
           alt="right arrow"
           onClick={() => { nextPoster(); playSound() }}
         />
       </div>
-      <div
-        className={
-          params.fullscreen ? styles.DescriptionFullscreen : styles.Description
-        }
-      >
+      <div className={params.fullscreen ? styles.DescriptionFullscreen : styles.Description}>
         {leftAnimation || rightAnimation ? null : (
           <div className={styles.DescriptionText}>
-            <FetchMovie></FetchMovie>
+            <FetchMovie />
           </div>
-        )}
-      </div>
-    </div>
+        )}    </div></div>
   );
 }
 
