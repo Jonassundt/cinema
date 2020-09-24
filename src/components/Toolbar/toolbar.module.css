@@ -19,7 +19,7 @@
 }
 
 .Group {
-    font-size: 1.4em;
+    font-size: 1.2em;
     font-weight: bold;
     background: #4d4d4d86;
     width: 50px;
@@ -29,7 +29,7 @@
     margin: 0 10px;
 }
 
-.Group div:hover {
+.Group div:not(:nth-child(2)):hover {
     font-size: 1.2em;
     margin-top: -0.12em;
     margin-bottom: -0.12em;
@@ -46,20 +46,22 @@
     padding: 35px 25px;
     transition: 0.1s;
     min-width: 75px;
+    height: 30px;
+    margin-top: 10px;
 }
 
 
 .Toggle {
     background: #88888886;
     border-radius: 0 8px 8px 0;
-    margin: 0;
+    margin: 10px 0;
     min-width: 50px;
     padding: 35px 20px;
 }
 
 .Toggle:first-child {
     border-radius: 8px 0 0 8px;
-    margin: 0 0 0 10px;
+    margin: 10px 0 0 10px;
 }
 
 .Toggle:hover,
@@ -72,6 +74,7 @@
 .ButtonBar {
     padding: 0;
     overflow: hidden;
+    height: 100px;
 }
 
 .Icon {
