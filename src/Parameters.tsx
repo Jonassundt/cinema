@@ -1,14 +1,15 @@
 import React from "react";
 
 const initialState = {
-  light: 30,
-  volume: 0,
-  animation: true,
-  color: true,
-  fullscreen: false,
-  slideshow: false,
-  posterIndex: 0,
-};
+    light: 30,
+    volume: 0,
+    animation: false,
+    color: true,
+    fullscreen: false,
+    slideshow: false,
+    //runningSlideshow: false,
+    posterIndex: 0
+}
 
 const Parameters = React.createContext({
   params: initialState,
