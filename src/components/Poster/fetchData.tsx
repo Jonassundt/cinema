@@ -14,16 +14,23 @@ export default class fetchMovie extends React.Component {
     movie: { title: "", tagline: "", overview: "" },
     movieIds,
     apiKey: "4d785ede4f71452009daf3f954680323",
+    posterIndex: -1,
   };
 
-  async componentDidMount() {
-    const url = `https://api.themoviedb.org/3/movie/${
-      movieIds[this.context.params.posterIndex]
-    }?api_key=${this.state.apiKey}`;
-    const response = await fetch(url);
+  fetchData = async () => {
+    const posterIndex = this.context.params.posterIndex;
+    const response = await fetch(
+      `https://api.themoviedb.org/3/movie/${movieIds[posterIndex]}?api_key=${this.state.apiKey}`);
     const data = await response.json();
-    console.log(data);
-    this.setState({ movie: data, loading: false });
+    this.setState({ movie: data, loading: false, posterIndex });
+  }
+
+  async componentDidMount() {
+    await this.fetchData();
+  }
+
+  async componentDidUpdate() {
+    if (this.context.params.posterIndex !== this.state.posterIndex) await this.fetchData();
   }
 
   render() {
@@ -32,12 +39,12 @@ export default class fetchMovie extends React.Component {
         {this.state.loading || !this.state.movie ? (
           <div>Loading...</div>
         ) : (
-          <div className={styles.container}>
-            <div className={styles.tagline}>"{this.state.movie.tagline}"</div>
-            <div className={styles.title}>{this.state.movie.title}</div>
-            <div className={styles.overview}>{this.state.movie.overview}</div>
-          </div>
-        )}
+            <div className={styles.container}>
+              <div className={styles.tagline}>"{this.state.movie.tagline}"</div>
+              <div className={styles.title}>{this.state.movie.title}</div>
+              <div className={styles.overview}>{this.state.movie.overview}</div>
+            </div>
+          )}
       </div>
     );
   }

@@ -1,18 +1,124 @@
-.BondAnimation .cls-9 {
-  stroke: red;
-  stroke-width: 10px;
+.BondAnimation .cls-99, .BondAnimation .cls-14, .BondAnimation .cls-15, .BondAnimation .cls-16 {
+  animation: bond 3s infinite;
+}
+
+.BondAnimation .cls-99 {
+  fill: rgb(42, 42, 42);
+}
+
+.BondAnimation .cls-16 {
+  animation: bond 3s infinite, bondFire 3s infinite;
+}
+
+.BondAnimation .cls-9  {
+  animation: bondBackground 8s infinite;
+}
+
+@keyframes bond {
+  25% {
+    transform: translateX(-330px) translateY(400px) rotate(-30deg);
+  }
+  40% {
+    transform: translateX(-370px) translateY(860px) rotate(-55deg);
+  }
+  50% {
+    transform: translateX(-330px) translateY(1140px) rotate(-70deg);
+    }
+  75% {
+    transform: translateX(-300px) translateY(400px) rotate(-30deg);
+  }
+}
+
+@keyframes bondFire {
+  23% {
+    fill: black;
+  }
+  25% {
+    fill: yellow;
+  }
+  28% {
+    fill: black;
+  }
+  38% {
+    fill: black;
+  }
+  40% {
+    fill: yellow;
+  }
+  42% {
+    fill: black;
+  }
+  48% {
+    fill: black;
+  }
+  50% {
+    fill: yellow;
+    }
+    52% {
+      fill: black;
+    }
+    73% {
+      fill: black;
+    }
+  75% {
+    fill: yellow;
+  }
+  77% {
+    fill: black;
+  }
+}
+
+@keyframes bondBackground {
+  90% {
+    r: 600;
+  }
+}
+
+.InterstellarAnimation #svg_5, .InterstellarAnimation #svg_18, .InterstellarAnimation #svg_19, 
+.InterstellarAnimation #svg_20, .InterstellarAnimation #svg_21, .InterstellarAnimation #svg_22, .InterstellarAnimation #svg_23 {
+  animation: interstellarShip 20s infinite;
+}
+
+.InterstellarAnimation #svg_2 {
+  animation: interstellarBackground 5s infinite;
+}
+
+@keyframes interstellarShip {
+  0% {
+    transform: translateY(0);
+  }
+  10% {
+    transform: translateY(-40px);
+  }
+  20% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-40px);
+  }
+  40% {
+    transform: translateX(0) rotate(0) translateY(0);
+  }
+  60% {
+    transform: translateX(800px) rotate(-30deg);
+  }
+  100% {
+    transform: translateX(0) rotate(0);
+  }
+}
+
+@keyframes interstellarBackground {
+  50% {
+    fill: #927933;
+  }
 }
 
 .InceptionAnimation {
   border: 4px solid rgb(0, 255, 34);
 }
 
-.InterstellarAnimation {
-  border: 4px solid rgb(25, 0, 255);
-}
-
 .BatmanAnimation {
-  border: 4px solid rgb(194, 194, 194);
+  border: 4px solid rgb(72, 255, 0);
 }
 
 .ShawshankAnimation {
@@ -20,5 +126,5 @@
 }
 
 .StarwarsAnimation {
-  border: 4px solid rgb(22, 14, 14);
+  border: 4px solid rgb(72, 255, 0);
 }

@@ -20,8 +20,8 @@ function Toolbar() {
                 <div>
                     <img className={styles.Icon} src={"/icons/brightness.svg"} alt="" />
                     <div className={styles.Group}>
-                        <div onClick={() => params.light < 60 && setLight(params.light + 5)}>+</div>
-                        <div onClick={() => params.light > 30 && setLight(params.light - 5)}>-</div>
+                        <div onClick={() => params.light < 70 && setLight(params.light + 5)}>+</div>
+                        <div onClick={() => params.light > 40 && setLight(params.light - 5)}>-</div>
                     </div></div>
                 <div>
                     {/* Volum */}
@@ -46,7 +46,7 @@ function Toolbar() {
                     <div className={styles.Toggle}>Se favoritter</div>
                 </div>
             </div>
-            <div className={styles.SpotRow} style={{ opacity: params.light < 45 ? 0 : 1 }}>
+            <div className={styles.SpotRow} style={{ opacity: params.light < 55 ? 0 : 1 }}>
                 <div className={styles.Spotlight} />
                 <div className={styles.Spotlight} />
             </div>

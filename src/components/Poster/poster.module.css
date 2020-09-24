@@ -63,7 +63,7 @@
 .Description,
 .DescriptionFullscreen {
   margin-top: 20px;
-  padding: 60px 100px 60px 100px;
+  padding: 40px 60px;
   border-radius: 20px;
   color: rgb(189, 189, 189);
   background: #3333338e;
@@ -142,9 +142,121 @@
     align-items: center;   
 }
 
-.fetchMovieSubdiv {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.Loader {
+  position: absolute;
+  height: 800px;
+  width: 1300px;
+  background: radial-gradient(#ffffff7c, #22212181);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.Loader::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  height: 5px;
+  background: #000;
+}
+
+.Loader::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5px;
+  height: 100%;
+  background: #000;
+}
+
+.Circle1, .Circle2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  border: 5px solid #fff;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.Circle2 {
+  width: 600px;
+  height: 600px;
+}
+
+.Niddle {
+  position: absolute;
+  top: calc(50% - 2px);
+  left: 50%;
+  height: 4px;
+  width: 1200px;
+  background: #000;
+  animation: animate 1s linear infinite;
+  transform-origin: left;
+}
+
+.Number {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.Number div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 25em;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  opacity: 0;
+  animation: animateNum 5s linear infinite;
+}
+
+.Number div:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.Number div:nth-child(2) {
+  animation-delay: 1s;
+}
+
+.Number div:nth-child(3) {
+  animation-delay: 2s;
+}
+
+.Number div:nth-child(4) {
+  animation-delay: 3s;
+}
+
+.Number div:nth-child(5) {
+  animation-delay: 4s;
+}
+
+@keyframes animate {
+  0% {
+      transform: rotate(-90deg);
+  }
+  100% {
+      transform: rotate(270deg);
+  }
+}
+
+@keyframes animateNum {
+  0%,20% {
+      opacity: 1;
+  }
+  20.01%,100% {
+      opacity: 0;
+  }
 }

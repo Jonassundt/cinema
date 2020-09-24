@@ -10,7 +10,7 @@ import "./index.css";
 
 function App() {
   const [params, setParams] = useState({
-    light: 30,
+    light: 40,
     volume: 0,
     animation: true,
     color: true,
@@ -34,8 +34,8 @@ function App() {
           {params.fullscreen ? (
             <div className="TopRow" />
           ) : (
-            <div className="App-header">Prosjekt 2, Gruppe 60</div>
-          )}
+              <div className="App-header">Prosjekt 2, Gruppe 60</div>
+            )}
           {/* TODO: Show components immediately, or display a simple welcome-page initially? */}
           <div>
             <Toolbar />

@@ -17,6 +17,7 @@ function Poster() {
     setParams({ ...params, posterIndex });
   const [leftAnimation, setLeftAnimation] = useState(false);
   const [rightAnimation, setRightAnimation] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const posters = posterImages.map((poster) => (
     <PosterElement poster={poster} height={height} />
@@ -40,6 +41,27 @@ function Poster() {
     }
   };
 
+  const playSound = () => {
+    let number = Math.random();
+    let url;
+    if (number < 0.1) {
+      number = number * 10;
+      if (number > 0.6) {
+        url = "/sounds/Villager.mp3";
+      }
+      else if (number > 0.3) {
+        url = "/sounds/O.mp3"
+      }
+      else {
+        url = "/sounds/Pig.mp3";
+      }
+      const audio = new Audio(url);
+      audio.load();
+      audio.play();
+      audio.volume = 0.5;
+    }
+  }
+
   const keyboardEvent = (c: Number) => {
     if (c === 37) prevPoster();
     else if (c === 39) nextPoster();
@@ -52,7 +74,34 @@ function Poster() {
       (event) => keyboardEvent(event.keyCode),
       false
     );
+    setTimeout(() => setLoading(false), 4900);
   });
+
+  if (loading) {
+    return (
+      <div>
+        <div className={styles.Poster} >
+          <div className={styles.Frame} >
+            <div className={styles.Loader}>
+              <div className={styles.Circle1}></div>
+              <div className={styles.Circle2}></div>
+              <div className={styles.Niddle}></div>
+              <div className={styles.Number}>
+                {["5", "4", "3", "2", "1"].map((number) => <div key={number}>{number}</div>)}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className={styles.Description}>
+          <div className={styles.DescriptionText}>
+          </div>
+
+        </div>
+      </div>
+    )
+  }
+
 
   return (
     <div>
@@ -65,15 +114,15 @@ function Poster() {
           }
           src="icons/leftarrow.svg"
           alt="left arrow"
-          onClick={prevPoster}
+          onClick={() => { prevPoster(); playSound(); }}
         />
         <div
           className={
             leftAnimation
               ? styles.LeftAnimation
               : rightAnimation
-              ? styles.RightAnimation
-              : styles.Frame
+                ? styles.RightAnimation
+                : styles.Frame
           }
           style={{ filter: `grayscale(${params.color ? 0 : 1})` }}
         >
@@ -87,7 +136,7 @@ function Poster() {
           }
           src="icons/rightarrow.svg"
           alt="right arrow"
-          onClick={nextPoster}
+          onClick={() => { nextPoster(); playSound() }}
         />
       </div>
       <div
@@ -99,7 +148,7 @@ function Poster() {
           <div className={styles.DescriptionText}>
             <FetchMovie></FetchMovie>
           </div>
-        )}{" "}
+        )}
       </div>
     </div>
   );
