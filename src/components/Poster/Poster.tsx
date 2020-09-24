@@ -45,13 +45,13 @@ function Poster() {
     if (number < 0.1) {
       number = number * 10;
       if (number > 0.6) {
-        url = "/sounds/Villager.mp3";
+        url = "/sounds/villager.mp3";
       }
       else if (number > 0.3) {
-        url = "/sounds/O.mp3"
+        url = "/sounds/o.mp3"
       }
       else {
-        url = "/sounds/Pig.mp3";
+        url = "/sounds/pig.mp3";
       }
       const audio = new Audio(url);
       audio.load();
