@@ -12,8 +12,8 @@ const initialState = {
 }
 
 const Parameters = React.createContext({
-    params: initialState, setParams: (params: any) => {
-    }
+  params: initialState,
+  setParams: (params: any) => {},
 });
 
 export default Parameters;
