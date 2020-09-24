@@ -16,7 +16,6 @@ function App() {
     color: true,
     fullscreen: false,
     slideshow: false,
-    //runningSlideshow: false,
     posterIndex: 0
   });
 
@@ -37,7 +36,6 @@ function App() {
           ) : (
               <div className="App-header">Prosjekt 2, Gruppe 60</div>
             )}
-          {/* TODO: Show components immediately, or display a simple welcome-page initially? */}
           <div>
             <Toolbar />
             <Poster />

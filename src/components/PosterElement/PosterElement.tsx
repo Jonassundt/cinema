@@ -18,7 +18,7 @@ type PosterElementState = {
 class PosterElement extends React.Component<
   PosterElementProps,
   PosterElementState
-> {
+  > {
   constructor(props: PosterElementProps) {
     super(props);
     this.state = { playing: false, audio: null, audioIndex: -1 };
@@ -28,6 +28,7 @@ class PosterElement extends React.Component<
 
   playAudio = () => {
     if (!this.state.playing) {
+      console.log(this.state.audio)
       this.state.audio.load();
       this.state.audio.play();
       this.state.audio.volume = this.context.params.volume / 10;

@@ -7,7 +7,6 @@ const initialState = {
   color: true,
   fullscreen: false,
   slideshow: false,
-  //runningSlideshow: false,
   posterIndex: 0
 }
 

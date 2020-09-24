@@ -21,24 +21,22 @@ function Poster() {
   const [leftAnimation, setLeftAnimation] = useState(false);
   const [rightAnimation, setRightAnimation] = useState(false);
   const [loading, setLoading] = useState(true);
-
-  const setRunningSlideshow = (runningSlideshow: boolean) => setParams({ ...params, runningSlideshow })
-  let myInterval: any = null;
+  const [slideshowId, setSlideshowId] = useState(0);
 
   const prevPoster = () => {
     if (leftAnimation || rightAnimation) return;
     setLeftAnimation(true);
     setTimeout(() =>
-      setPosterIndex((params.posterIndex + posters.length - 1) % posters.length), 500); //Ensures that modulo works correctly.
-    setTimeout(() => setLeftAnimation(false), 1200);
+      setPosterIndex((params.posterIndex + posters.length - 1) % posters.length), 400); //Ensures that modulo works correctly.
+    setTimeout(() => setLeftAnimation(false), 800);
   }
 
   const nextPoster = () => {
     if (leftAnimation || rightAnimation) return;
     setRightAnimation(true);
     setTimeout(() =>
-      setPosterIndex((params.posterIndex + 1) % posters.length), 500);
-    setTimeout(() => setRightAnimation(false), 1200)
+      setPosterIndex((params.posterIndex + 1) % posters.length), 400);
+    setTimeout(() => setRightAnimation(false), 800)
   }
 
   const playSound = () => {
@@ -68,45 +66,54 @@ function Poster() {
     return;
   };
 
-  /*
-  const runSlideshow = () => {
-      setRunningSlideshow(true);
-      myInterval = setInterval(nextPoster, 4000);
-      //console.log("runSlideshow method is called.");
+  // const runSlideshow = () => {
+  //   const id = setInterval(nextPoster, 2000);
+  //   setSlideshowId(parseInt(id.toString()));
+  // }
+
+  // const stopSlideshow = () => {
+  //   clearInterval(slideshowId);
+  //   setSlideshowId(0);
+  // }
+
+  const startSlideshow = () => {
+    const id = setTimeout(nextPoster, 2000);
+    setSlideshowId(parseInt(id.toString()));
+    continueSlideshow();
+  }
+
+  const continueSlideshow = () => {
+    clearInterval(slideshowId);
+    setSlideshowId(0);
   }
 
   const stopSlideshow = () => {
-      setRunningSlideshow(false);
-      clearInterval(myInterval);
-      //console.log("stopSlideshow method is called.");
+    clearInterval(slideshowId);
+    setSlideshowId(0);
   }
-  */
-
 
   useEffect(() => {
     document.addEventListener("keydown", event => keyboardEvent(event.keyCode), false);
 
-    /*
-    if(!params.runningSlideshow && params.slideshow){ //hvis det ikke kjøres slideshow nå, og slideshow-variabel er sann, start slideshow
-        runSlideshow();
+    console.log(params.slideshow)
+    if (loading) {
+      setTimeout(() => setLoading(false), 4900);
     }
-    else if(params.runningSlideshow && !params.slideshow){ //hvis det kjøres slideshow nå, og slideshow-variabel er false -> stopp slideshow
-        stopSlideshow();
+    if (params.slideshow && !slideshowId) { //hvis det ikke kjøres slideshow nå, og slideshow-variabel er sann, start slideshow
+      startSlideshow();
     }
-    else{
-        //do nothing
+    else if (!params.slideshow && slideshowId) { //hvis det kjøres slideshow nå, og slideshow-variabel er false -> stopp slideshow
+      continueSlideshow();
     }
-    */
-
-    setTimeout(() => setLoading(false), 4900);
-
-  });
-
+    else if (!params.slideshow) { //hvis det kjøres slideshow nå, og slideshow-variabel er false -> stopp slideshow
+      stopSlideshow();
+    }
+  }, [params, startSlideshow, slideshowId]);
 
   if (loading) {
     return (
       <div>
-        <div className={styles.Poster} >
+        <div className={styles.Poster} onClick={() => setLoading(false)} >
           <div className={styles.Frame} >
             <div className={styles.Loader}>
               <div className={styles.Circle1}></div>
@@ -118,11 +125,9 @@ function Poster() {
             </div>
           </div>
         </div>
-        <div
-          className={styles.Description}>
+        <div className={styles.Description}>
           <div className={styles.DescriptionText}>
           </div>
-
         </div>
       </div>
     )
@@ -152,7 +157,9 @@ function Poster() {
           <div className={styles.DescriptionText}>
             <FetchMovie />
           </div>
-        )}    </div></div>
+        )}
+      </div>
+    </div>
   );
 }
 
