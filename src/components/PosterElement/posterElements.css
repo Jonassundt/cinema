@@ -1,16 +1,16 @@
-.BondAnimation .cls-99, .BondAnimation .cls-14, .BondAnimation .cls-15, .BondAnimation .cls-16 {
+.JamesbondAnimation .cls-99, .JamesbondAnimation .cls-14, .JamesbondAnimation .cls-15, .JamesbondAnimation .cls-16 {
   animation: bond 3s infinite;
 }
 
-.BondAnimation .cls-99 {
+.JamesbondAnimation .cls-99 {
   fill: rgb(42, 42, 42);
 }
 
-.BondAnimation .cls-16 {
+.JamesbondAnimation .cls-16 {
   animation: bond 3s infinite, bondFire 3s infinite;
 }
 
-.BondAnimation .cls-9  {
+.JamesbondAnimation .cls-9  {
   animation: bondBackground 8s infinite;
 }
 

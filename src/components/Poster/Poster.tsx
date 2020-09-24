@@ -22,6 +22,7 @@ function Poster() {
   const [rightAnimation, setRightAnimation] = useState(false);
   const [loading, setLoading] = useState(true);
   const [slideshowId, setSlideshowId] = useState(0);
+  const [slideshowIndex, setSlideshowIndex] = useState(0);
 
   const prevPoster = () => {
     if (leftAnimation || rightAnimation) return;
@@ -31,11 +32,11 @@ function Poster() {
     setTimeout(() => setLeftAnimation(false), 800);
   }
 
-  const nextPoster = () => {
+  const nextPoster = (slideshowIndex: number = -1) => {
     if (leftAnimation || rightAnimation) return;
     setRightAnimation(true);
     setTimeout(() =>
-      setPosterIndex((params.posterIndex + 1) % posters.length), 400);
+      slideshowIndex >= 0 ? setPosterIndex(slideshowIndex) : setPosterIndex((params.posterIndex + 1) % posters.length), 400);
     setTimeout(() => setRightAnimation(false), 800)
   }
 
@@ -66,49 +67,34 @@ function Poster() {
     return;
   };
 
-  // const runSlideshow = () => {
-  //   const id = setInterval(nextPoster, 2000);
-  //   setSlideshowId(parseInt(id.toString()));
-  // }
-
-  // const stopSlideshow = () => {
-  //   clearInterval(slideshowId);
-  //   setSlideshowId(0);
-  // }
-
   const startSlideshow = () => {
-    const id = setTimeout(nextPoster, 2000);
+    setSlideshowIndex(params.posterIndex + 1);
+    const id = setInterval(() => { setSlideshowIndex(prev => (prev + 1) % posters.length); }, 15000);
     setSlideshowId(parseInt(id.toString()));
-    continueSlideshow();
-  }
-
-  const continueSlideshow = () => {
-    clearInterval(slideshowId);
-    setSlideshowId(0);
   }
 
   const stopSlideshow = () => {
     clearInterval(slideshowId);
     setSlideshowId(0);
+    setSlideshowIndex(-1);
   }
 
   useEffect(() => {
     document.addEventListener("keydown", event => keyboardEvent(event.keyCode), false);
 
-    console.log(params.slideshow)
     if (loading) {
       setTimeout(() => setLoading(false), 4900);
     }
-    if (params.slideshow && !slideshowId) { //hvis det ikke kjøres slideshow nå, og slideshow-variabel er sann, start slideshow
+    else if (params.slideshow && !slideshowId) { //hvis det ikke kjøres slideshow nå, og slideshow-variabel er sann, start slideshow
       startSlideshow();
     }
     else if (!params.slideshow && slideshowId) { //hvis det kjøres slideshow nå, og slideshow-variabel er false -> stopp slideshow
-      continueSlideshow();
-    }
-    else if (!params.slideshow) { //hvis det kjøres slideshow nå, og slideshow-variabel er false -> stopp slideshow
       stopSlideshow();
     }
-  }, [params, startSlideshow, slideshowId]);
+    else if (params.slideshow && slideshowIndex) {
+      nextPoster(slideshowIndex);
+    }
+  }, [params.slideshow, params.posterIndex, slideshowId, slideshowIndex, setSlideshowIndex]);
 
   if (loading) {
     return (
@@ -136,21 +122,23 @@ function Poster() {
   return (
     <div>
       <div className={params.fullscreen ? styles.PosterFullscreen : styles.Poster}>
-        <img
-          className={styles.ArrowButtons}
-          src="icons/leftarrow.svg"
-          alt="left arrow"
-          onClick={() => { prevPoster(); playSound(); }}
-        />
+        {params.slideshow ? <div /> :
+          <img
+            className={styles.ArrowButtons}
+            src="icons/leftarrow.svg"
+            alt="left arrow"
+            onClick={() => { prevPoster(); playSound(); }}
+          />}
         <div className={leftAnimation ? styles.LeftAnimation : rightAnimation ? styles.RightAnimation : styles.Frame} style={{ filter: `grayscale(${params.color ? 0 : 1})` }}>
           {posters[params.posterIndex]}
         </div>
-        <img
-          className={styles.ArrowButtons}
-          src="icons/rightarrow.svg"
-          alt="right arrow"
-          onClick={() => { nextPoster(); playSound() }}
-        />
+        {params.slideshow ? <div /> :
+          <img
+            className={styles.ArrowButtons}
+            src="icons/rightarrow.svg"
+            alt="right arrow"
+            onClick={() => { nextPoster(); playSound() }}
+          />}
       </div>
       <div className={params.fullscreen ? styles.DescriptionFullscreen : styles.Description}>
         {leftAnimation || rightAnimation ? null : (

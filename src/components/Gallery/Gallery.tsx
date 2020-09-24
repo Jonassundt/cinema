@@ -9,8 +9,9 @@ import styles from "./gallery.module.css";
 function Gallery() {
   const { params, setParams } = useContext(Parameters);
 
-  const setPosterIndex = (posterIndex: number) =>
-    setParams({ ...params, posterIndex });
+  const setPosterIndex = (posterIndex: number) => {
+    setParams({ ...params, posterIndex, slideshow: false });
+  }
 
   return (
     <div className={styles.Gallery}>

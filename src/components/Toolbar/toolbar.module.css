@@ -36,6 +36,7 @@
 }
 
 .Toggle,
+.ButtonBar,
 .Button {
     background: #4d4d4d86;
     border-radius: 8px;
@@ -63,8 +64,14 @@
 
 .Toggle:hover,
 .Group:hover,
+.ButtonBar:hover,
 .Button:hover {
     background: rgba(119, 119, 119, 0.525);
+}
+
+.ButtonBar {
+    padding: 0;
+    overflow: hidden;
 }
 
 .Icon {
@@ -85,4 +92,14 @@
     width: 120px;
     border-radius: 20px;
     z-index: 10;
+}
+
+.SlideBar {
+    background: #88888886;
+    padding: 38px 0;
+    border-radius: 8px 0 0 8px;
+}
+
+.SlideText {
+    width: 160px;
 }
