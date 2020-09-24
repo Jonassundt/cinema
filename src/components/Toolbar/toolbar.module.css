@@ -1,5 +1,5 @@
 .Toolbar, .ToolbarFullscreen {
-    padding: 30px;
+    padding: 20px;
     background: #2f2f2f8e;
     border-radius: 20px;
     text-align: center;   
@@ -19,7 +19,7 @@
 }
 
 .Group {
-    font-size: 1.4em;
+    font-size: 1.2em;
     font-weight: bold;
     background: #4d4d4d86;
     width: 50px;
@@ -29,13 +29,14 @@
     margin: 0 10px;
 }
 
-.Group div:hover {
+.Group div:not(:nth-child(2)):hover {
     font-size: 1.2em;
     margin-top: -0.12em;
     margin-bottom: -0.12em;
 }
 
 .Toggle,
+.ButtonBar,
 .Button {
     background: #4d4d4d86;
     border-radius: 8px;
@@ -45,26 +46,35 @@
     padding: 35px 25px;
     transition: 0.1s;
     min-width: 75px;
+    height: 30px;
+    margin-top: 10px;
 }
 
 
 .Toggle {
-    background: #88888886;
+    background: rgba(133, 133, 133, 0.525);
     border-radius: 0 8px 8px 0;
-    margin: 0;
+    margin: 10px 10px 0 0;
     min-width: 50px;
     padding: 35px 20px;
 }
 
 .Toggle:first-child {
     border-radius: 8px 0 0 8px;
-    margin: 0 0 0 10px;
+    margin: 10px 0 0 10px;
 }
 
 .Toggle:hover,
 .Group:hover,
+.ButtonBar:hover,
 .Button:hover {
     background: rgba(119, 119, 119, 0.525);
+}
+
+.ButtonBar {
+    padding: 0;
+    overflow: hidden;
+    height: 100px;
 }
 
 .Icon {
@@ -85,4 +95,14 @@
     width: 120px;
     border-radius: 20px;
     z-index: 10;
+}
+
+.SlideBar {
+    background: #88888886;
+    padding: 35px 0 50px 0;
+    border-radius: 8px 0 0 8px;
+}
+
+.SlideText {
+    width: 160px;
 }

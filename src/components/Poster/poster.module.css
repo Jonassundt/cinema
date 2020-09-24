@@ -119,12 +119,11 @@
 }
 
 .LeftAnimation {
-  animation: left 1.2s ease-in-out;
+  animation: left 0.8s ease-in-out;
 }
 
 .RightAnimation {
-    animation: right;
-    animation-duration: 1.2s;
+  animation: right 0.8s ease-in-out;
 }
 
 .fetchMovie {

@@ -1,8 +1,10 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 
-import styles from './toolbar.module.css';
+import posterImages from "../Images";
 
 import Parameters from "../../Parameters";
+
+import styles from './toolbar.module.css';
 
 function Toolbar() {
     const { params, setParams } = useContext(Parameters);
@@ -12,6 +14,29 @@ function Toolbar() {
     const setColor = () => setParams({ ...params, color: !params.color })
     const setFullscreen = () => setParams({ ...params, fullscreen: !params.fullscreen })
     const toggleSlideshow = () => setParams({ ...params, slideshow: !params.slideshow });
+    const [slideShowIntervalId, setSlideShowIntervalId] = useState(0);
+    const [slideshowBar, setSlideshowBar] = useState(0);
+
+    const slideshow = () => {
+        if (!params.slideshow) {
+            const id = setInterval(() => setSlideshowBar(prev => (prev + 0.1) % 15), 100)
+            setSlideShowIntervalId(parseInt(id.toString()));
+        }
+        else {
+            clearInterval(slideShowIntervalId);
+            setSlideShowIntervalId(0);
+            setSlideshowBar(0)
+        }
+        toggleSlideshow();
+    }
+
+    useEffect(() => {
+        if (!params.slideshow) {
+            clearInterval(slideShowIntervalId);
+            setSlideShowIntervalId(0);
+            setSlideshowBar(0)
+        }
+    }, [params.slideshow, slideShowIntervalId])
 
     return (
         <div>
@@ -21,6 +46,7 @@ function Toolbar() {
                     <img className={styles.Icon} src={"/icons/brightness.svg"} alt="" />
                     <div className={styles.Group}>
                         <div onClick={() => params.light < 70 && setLight(params.light + 5)}>+</div>
+                        <div>{(params.light - 40) * 3}</div>
                         <div onClick={() => params.light > 40 && setLight(params.light - 5)}>-</div>
                     </div></div>
                 <div>
@@ -28,6 +54,7 @@ function Toolbar() {
                     <img className={styles.Icon} src={"/icons/volume.svg"} alt="" />
                     <div className={styles.Group}>
                         <div onClick={() => params.volume < 9 && setVolume(params.volume + 1)}>+</div>
+                        <div>{params.volume * 10}</div>
                         <div onClick={() => params.volume > 0 && setVolume(params.volume - 1)}>-</div>
                     </div>
                 </div>
@@ -36,7 +63,13 @@ function Toolbar() {
                 {/* Sort-hvitt */}
                 <div className={styles.Button} onClick={setColor}>Fargefilm</div>
                 {/* Slideshow */}
-                <div className={styles.Button} onClick={toggleSlideshow}>Slideshow</div>
+                <div className={styles.ButtonBar} onClick={slideshow}>
+                    <div className={styles.SlideBar} style={{ width: `${(slideshowBar / 15) * 100}%` }}>
+                        <div className={styles.SlideText}>{!params.slideshow ? "Slideshow" :
+                            <div>Neste: <strong>{posterImages[(params.posterIndex + 1) % posterImages.length].props.name}</strong></div>}
+                        </div>
+                    </div>
+                </div>
                 {/* Fullskjerm */}
                 <div className={styles.Button} onClick={setFullscreen}>Fullskjerm</div>
                 {/* Favoritt */}

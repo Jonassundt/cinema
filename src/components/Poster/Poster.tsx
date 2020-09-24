@@ -1,5 +1,4 @@
 import React, { useState, useContext, useEffect } from "react";
-import styles from "./poster.module.css";
 
 import PosterElement from "../PosterElement/PosterElement";
 import FetchMovie from "./fetchData";
@@ -7,6 +6,9 @@ import FetchMovie from "./fetchData";
 import posterImages from "../Images";
 
 import Parameters from "../../Parameters";
+
+import styles from "./poster.module.css";
+
 
 function Poster() {
   const { params, setParams } = useContext(Parameters);
@@ -21,24 +23,23 @@ function Poster() {
   const [leftAnimation, setLeftAnimation] = useState(false);
   const [rightAnimation, setRightAnimation] = useState(false);
   const [loading, setLoading] = useState(true);
-
-  const setRunningSlideshow = (runningSlideshow: boolean) => setParams({ ...params, runningSlideshow })
-  let myInterval: any = null;
+  const [slideshowId, setSlideshowId] = useState(0);
+  const [slideshowIndex, setSlideshowIndex] = useState(0);
 
   const prevPoster = () => {
     if (leftAnimation || rightAnimation) return;
     setLeftAnimation(true);
     setTimeout(() =>
-      setPosterIndex((params.posterIndex + posters.length - 1) % posters.length), 500); //Ensures that modulo works correctly.
-    setTimeout(() => setLeftAnimation(false), 1200);
+      setPosterIndex((params.posterIndex + posters.length - 1) % posters.length), 400); //Ensures that modulo works correctly.
+    setTimeout(() => setLeftAnimation(false), 800);
   }
 
-  const nextPoster = () => {
+  const nextPoster = (slideshowIndex: number = -1) => {
     if (leftAnimation || rightAnimation) return;
     setRightAnimation(true);
     setTimeout(() =>
-      setPosterIndex((params.posterIndex + 1) % posters.length), 500);
-    setTimeout(() => setRightAnimation(false), 1200)
+      slideshowIndex >= 0 ? setPosterIndex(slideshowIndex) : setPosterIndex((params.posterIndex + 1) % posters.length), 400);
+    setTimeout(() => setRightAnimation(false), 800)
   }
 
   const playSound = () => {
@@ -68,45 +69,39 @@ function Poster() {
     return;
   };
 
-  /*
-  const runSlideshow = () => {
-      setRunningSlideshow(true);
-      myInterval = setInterval(nextPoster, 4000);
-      //console.log("runSlideshow method is called.");
+  const startSlideshow = () => {
+    setSlideshowIndex(params.posterIndex + 1);
+    const id = setInterval(() => { setSlideshowIndex(prev => (prev + 1) % posters.length); }, 15000);
+    setSlideshowId(parseInt(id.toString()));
   }
 
   const stopSlideshow = () => {
-      setRunningSlideshow(false);
-      clearInterval(myInterval);
-      //console.log("stopSlideshow method is called.");
+    clearInterval(slideshowId);
+    setSlideshowId(0);
+    setSlideshowIndex(-1);
   }
-  */
-
 
   useEffect(() => {
     document.addEventListener("keydown", event => keyboardEvent(event.keyCode), false);
 
-    /*
-    if(!params.runningSlideshow && params.slideshow){ //hvis det ikke kjøres slideshow nå, og slideshow-variabel er sann, start slideshow
-        runSlideshow();
+    if (loading) {
+      setTimeout(() => setLoading(false), 4900);
     }
-    else if(params.runningSlideshow && !params.slideshow){ //hvis det kjøres slideshow nå, og slideshow-variabel er false -> stopp slideshow
-        stopSlideshow();
+    else if (params.slideshow && !slideshowId) { //hvis det ikke kjøres slideshow nå, og slideshow-variabel er sann, start slideshow
+      startSlideshow();
     }
-    else{
-        //do nothing
+    else if (!params.slideshow && slideshowId) { //hvis det kjøres slideshow nå, og slideshow-variabel er false -> stopp slideshow
+      stopSlideshow();
     }
-    */
-
-    setTimeout(() => setLoading(false), 4900);
-
-  });
-
+    else if (params.slideshow && slideshowIndex > -1) {
+      nextPoster(slideshowIndex);
+    }
+  }, [params.slideshow, params.posterIndex, slideshowId, slideshowIndex, setSlideshowIndex]);
 
   if (loading) {
     return (
       <div>
-        <div className={styles.Poster} >
+        <div className={styles.Poster} onClick={() => setLoading(false)} >
           <div className={styles.Frame} >
             <div className={styles.Loader}>
               <div className={styles.Circle1}></div>
@@ -118,11 +113,9 @@ function Poster() {
             </div>
           </div>
         </div>
-        <div
-          className={styles.Description}>
+        <div className={styles.Description}>
           <div className={styles.DescriptionText}>
           </div>
-
         </div>
       </div>
     )
@@ -131,28 +124,32 @@ function Poster() {
   return (
     <div>
       <div className={params.fullscreen ? styles.PosterFullscreen : styles.Poster}>
-        <img
-          className={styles.ArrowButtons}
-          src="icons/leftarrow.svg"
-          alt="left arrow"
-          onClick={() => { prevPoster(); playSound(); }}
-        />
+        {params.slideshow ? <div /> :
+          <img
+            className={styles.ArrowButtons}
+            src="icons/leftarrow.svg"
+            alt="left arrow"
+            onClick={() => { prevPoster(); playSound(); }}
+          />}
         <div className={leftAnimation ? styles.LeftAnimation : rightAnimation ? styles.RightAnimation : styles.Frame} style={{ filter: `grayscale(${params.color ? 0 : 1})` }}>
           {posters[params.posterIndex]}
         </div>
-        <img
-          className={styles.ArrowButtons}
-          src="icons/rightarrow.svg"
-          alt="right arrow"
-          onClick={() => { nextPoster(); playSound() }}
-        />
+        {params.slideshow ? <div /> :
+          <img
+            className={styles.ArrowButtons}
+            src="icons/rightarrow.svg"
+            alt="right arrow"
+            onClick={() => { nextPoster(); playSound() }}
+          />}
       </div>
       <div className={params.fullscreen ? styles.DescriptionFullscreen : styles.Description}>
         {leftAnimation || rightAnimation ? null : (
           <div className={styles.DescriptionText}>
             <FetchMovie />
           </div>
-        )}    </div></div>
+        )}
+      </div>
+    </div>
   );
 }
 
