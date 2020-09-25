@@ -70,7 +70,7 @@ function Poster() {
   };
 
   const startSlideshow = () => {
-    setSlideshowIndex(params.posterIndex + 1);
+    setSlideshowIndex((params.posterIndex + 1) % posters.length);
     const id = setInterval(() => { setSlideshowIndex(prev => (prev + 1) % posters.length); }, 15000);
     setSlideshowId(parseInt(id.toString()));
   }
