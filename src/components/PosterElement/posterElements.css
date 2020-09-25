@@ -14,6 +14,22 @@
   animation: bondBackground 8s infinite;
 }
 
+.ShawshankAnimation #rain {
+  animation: rainDrops 8s infinite;
+}
+
+@keyframes rainDrops {
+  99.99% {
+    transform: translateX(-500px) translateY(700px);
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+
+
+
 @keyframes bond {
   25% {
     transform: translateX(-330px) translateY(400px) rotate(-30deg);

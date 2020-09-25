@@ -1,21 +1,20 @@
 import React, { useContext } from "react";
 
-import posterImages from "../Images";
-
 import Parameters from "../../Parameters";
+
+import posterImages from "../Images";
 
 import styles from "./gallery.module.css";
 
 function Gallery() {
   const { params, setParams } = useContext(Parameters);
 
-  const setPosterIndex = (posterIndex: number) => {
-    setParams({ ...params, posterIndex, slideshow: false });
-  }
+  const setPosterIndex = (posterIndex: number) =>
+    setParams({ ...params, posterIndex });
 
   return (
     <div className={styles.Gallery}>
-      {posterImages.map((poster, index) => (
+      {posterImages.filter((poster, index) => params.favorites.includes(index) || !params.showFavorites).map((poster, index) => (
         <div
           className={styles.Thumbnail}
           key={index}
@@ -28,4 +27,4 @@ function Gallery() {
   );
 }
 
-export default Gallery;
+export default Gallery; 

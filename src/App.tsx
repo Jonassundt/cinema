@@ -16,7 +16,9 @@ function App() {
     color: true,
     fullscreen: false,
     slideshow: false,
-    posterIndex: 0
+    posterIndex: 0,
+    favorites: [],
+    showFavorites: false
   });
 
   const providerValue = useMemo(() => ({ params, setParams }), [

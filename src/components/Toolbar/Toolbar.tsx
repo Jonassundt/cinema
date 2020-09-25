@@ -14,8 +14,24 @@ function Toolbar() {
     const setColor = () => setParams({ ...params, color: !params.color })
     const setFullscreen = () => setParams({ ...params, fullscreen: !params.fullscreen })
     const toggleSlideshow = () => setParams({ ...params, slideshow: !params.slideshow });
+    const toggleFavorites = () => setParams({ ...params, showFavorites: !params.showFavorites });
     const [slideShowIntervalId, setSlideShowIntervalId] = useState(0);
     const [slideshowBar, setSlideshowBar] = useState(0);
+    const setFavorite = () => setParams({ ...params, favorites: toggleIndexFavorite() })
+    //Ønsker at appendFavorite skal appende movieIndex til params.favorites - arrayen.
+
+    const toggleIndexFavorite = () => { //Legge til movieIndex hvis den eksisterer i params.favorites,
+        // Eller fjerne den fra lista om den allerede eksisterer.
+        let filteredArray : number[] = [];
+        if(params.posterIndex in params.favorites){ //Remove if movie already in favorites
+            filteredArray = params.favorites.filter(movie => movie !== params.posterIndex)
+        }
+        else { //Hvis den ikke er i lista, gjør den til favoritt.
+            filteredArray = params.favorites;
+            filteredArray.push(params.posterIndex);
+        }
+        return filteredArray;
+    }
 
     const slideshow = () => {
         if (!params.slideshow) {
@@ -36,7 +52,8 @@ function Toolbar() {
             setSlideShowIntervalId(0);
             setSlideshowBar(0)
         }
-    }, [params.slideshow, slideShowIntervalId])
+
+    }, [params, slideShowIntervalId])
 
     return (
         <div>
@@ -74,9 +91,9 @@ function Toolbar() {
                 <div className={styles.Button} onClick={setFullscreen}>Fullskjerm</div>
                 {/* Favoritt */}
                 <div className={styles.Row}>
-                    <div className={styles.Toggle}>Lagre favoritt</div>
+    <div className={styles.Toggle} onClick={setFavorite}>{params.posterIndex in params.favorites ? "Fjern" : "Lagre"} favoritt</div>
                     {/* Favoritter */}
-                    <div className={styles.Toggle}>Se favoritter</div>
+                    <div className={styles.Toggle} onClick={toggleFavorites}>Se favoritter</div>
                 </div>
             </div>
             <div className={styles.SpotRow} style={{ opacity: params.light < 55 ? 0 : 1 }}>
