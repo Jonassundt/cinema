@@ -32,6 +32,7 @@ function Poster() {
     setTimeout(() =>
       setPosterIndex((params.posterIndex + posters.length - 1) % posters.length), 400); //Ensures that modulo works correctly.
     setTimeout(() => setLeftAnimation(false), 800);
+    sessionStorage.setItem("posterIndex", ((params.posterIndex + posters.length - 1) % posters.length).toString());
   }
 
   const nextPoster = (slideshowIndex: number = -1) => {
@@ -40,6 +41,7 @@ function Poster() {
     setTimeout(() =>
       slideshowIndex >= 0 ? setPosterIndex(slideshowIndex) : setPosterIndex((params.posterIndex + 1) % posters.length), 400);
     setTimeout(() => setRightAnimation(false), 800)
+    sessionStorage.setItem("posterIndex", ((params.posterIndex + 1) % posters.length).toString());
   }
 
   const playSound = () => {
@@ -101,9 +103,9 @@ function Poster() {
   if (loading) {
     return (
       <div>
-        <div className={styles.Poster} onClick={() => setLoading(false)} >
+        <div className={params.fullscreen ? styles.PosterFullscreen : styles.Poster} onClick={() => setLoading(false)} >
           <div className={styles.Frame} >
-            <div className={styles.Loader}>
+            <div className={styles.Loader} style={params.fullscreen ? { height: "1500px", width: "100%" } : { height: "800px", width: "1300px" }}>
               <div className={styles.Circle1}></div>
               <div className={styles.Circle2}></div>
               <div className={styles.Niddle}></div>
@@ -113,7 +115,7 @@ function Poster() {
             </div>
           </div>
         </div>
-        <div className={styles.Description}>
+        <div className={params.fullscreen ? styles.DescriptionFullscreen : styles.Description}>
           <div className={styles.DescriptionText}>
           </div>
         </div>

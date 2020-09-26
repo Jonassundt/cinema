@@ -135,8 +135,6 @@
 
 .Loader {
   position: absolute;
-  height: 800px;
-  width: 1300px;
   background: radial-gradient(#ffffff7c, #22212181);
   border-radius: 12px;
   overflow: hidden;

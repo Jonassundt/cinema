@@ -10,15 +10,15 @@ import "./index.css";
 
 function App() {
   const [params, setParams] = useState({
-    light: 40,
+    light: parseInt(sessionStorage.getItem("light") || "40"),
     volume: 0,
-    animation: true,
-    color: true,
-    fullscreen: false,
+    animation: (sessionStorage.getItem("animation") || "true") === "true",
+    color: (sessionStorage.getItem("color") || "true") === "true",
+    fullscreen: (sessionStorage.getItem("fullscreen") || "false") === "true",
     slideshow: false,
-    posterIndex: 0,
-    favorites: [],
-    showFavorites: false
+    posterIndex: parseInt(sessionStorage.getItem("posterIndex") || "0"),
+    favorites: JSON.parse(localStorage.getItem("favorites") || "[]"),
+    showFavorites: (sessionStorage.getItem("showFavorites") || "false") === "true"
   });
 
   const providerValue = useMemo(() => ({ params, setParams }), [
