@@ -1,10 +1,15 @@
 import React, { useContext } from "react";
 
 import Parameters from "../../Parameters";
+import posters from "../Images";
 
 import posterImages from "../Images";
 
 import styles from "./gallery.module.css";
+
+interface indexes {
+  [key: string]: any;
+}
 
 function Gallery() {
   const { params, setParams } = useContext(Parameters);
@@ -12,7 +17,7 @@ function Gallery() {
   const setPosterIndex = (posterIndex: number) => {
     if (params.loading) return;
     sessionStorage.setItem("posterIndex", posterIndex.toString());
-    setParams({ ...params, posterIndex });
+    setParams({ ...params, posterIndex, slideshow: false });
     window.scroll({
       top: 0,
       behavior: 'smooth'
