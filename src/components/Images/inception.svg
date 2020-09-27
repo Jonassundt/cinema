@@ -1,5 +1,7 @@
 <svg viewBox="0 0 1000 1500" xmlns="http://www.w3.org/2000/svg">
- <style type="text/css">.zt0{fill:#AD946E;}
+ <style type="text/css">
+ @font-face{font-family: ArialMT;src: url('/fonts/ArialMT.woff');}
+ .zt0{fill:#AD946E;}
 	.zt1{fill:#E2CD9E;}
 	.zt2{fill:#E64425;stroke:#000000;stroke-miterlimit:10;}
 	.zt3{font-family:'ArialMT';}
