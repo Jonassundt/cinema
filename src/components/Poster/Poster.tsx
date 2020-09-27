@@ -14,7 +14,7 @@ function Poster() {
   /* Poster component, which is the main component of the website */
   const { params, setParams } = useContext(Parameters);
 
-  let height = params.fullscreen ? 1500 : 800;
+  let height = params.fullscreen ? 1200 : 800;
 
   const posters = posterImages.map((poster) => (
     <PosterElement poster={poster} height={height} />
@@ -109,7 +109,7 @@ function Poster() {
       <div>
         <div className={params.fullscreen ? styles.PosterFullscreen : styles.Poster} >
           <div className={styles.Frame} >
-            <div className={styles.Loader} style={params.fullscreen ? { height: "1500px", width: "100%" } : { height: "800px", width: "1300px" }}>
+            <div className={styles.Loader} style={params.fullscreen ? { height: "1200px", width: "100%" } : { height: "800px", width: "1300px" }}>
               <div className={styles.Circle1}></div>
               <div className={styles.Circle2}></div>
               <div className={styles.Niddle}></div>
