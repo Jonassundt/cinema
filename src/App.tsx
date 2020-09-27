@@ -10,7 +10,7 @@ import "./index.css";
 
 function App() {
   const [params, setParams] = useState({
-    light: parseInt(sessionStorage.getItem("light") || "50"),
+    light: parseInt(sessionStorage.getItem("light") || "40"),
     volume: 0,
     animation: (sessionStorage.getItem("animation") || "true") === "true",
     color: (sessionStorage.getItem("color") || "true") === "true",
