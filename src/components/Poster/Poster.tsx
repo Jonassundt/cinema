@@ -11,6 +11,7 @@ import styles from "./poster.module.css";
 
 
 function Poster() {
+  /* Poster component, which is the main component of the website */
   const { params, setParams } = useContext(Parameters);
 
   let height = params.fullscreen ? 1500 : 800;
@@ -27,6 +28,7 @@ function Poster() {
   const [slideshowIndex, setSlideshowIndex] = useState(0);
 
   const prevPoster = () => {
+    // Method for going to previous poster, with mod function to cycle back to start/end.
     if (leftAnimation || rightAnimation) return;
     setLeftAnimation(true);
     setTimeout(() =>
@@ -36,6 +38,7 @@ function Poster() {
   }
 
   const nextPoster = (slideshowIndex: number = -1) => {
+    // Method for going to next poster
     if (leftAnimation || rightAnimation) return;
     setRightAnimation(true);
     setTimeout(() =>
@@ -44,7 +47,12 @@ function Poster() {
     sessionStorage.setItem("posterIndex", ((params.posterIndex + 1) % posters.length).toString());
   }
 
+
   const playSound = () => {
+    /* Easter egg sound method, giving a probability of playing a minecraft sound at random when next or prev button is pressed.
+    * Just for fun :)
+    */
+
     let number = Math.random();
     let url;
     if (number < 0.1) {
@@ -66,24 +74,29 @@ function Poster() {
   }
 
   const keyboardEvent = (c: Number) => {
+    // Method for handling keyboard events.
+    // 37 is index for rightarrowbutton, 39 for leftarrowbutton.
     if (c === 37) prevPoster();
     else if (c === 39) nextPoster();
     return;
   };
 
   const startSlideshow = () => {
+    //Method for starting slideshow when user presses slideshowbutton. Sets index, and interval
     setSlideshowIndex((params.posterIndex + 1) % posters.length);
     const id = setInterval(() => { setSlideshowIndex(prev => (prev + 1) % posters.length); }, 15000);
     setSlideshowId(parseInt(id.toString()));
   }
 
   const stopSlideshow = () => {
+    //Method for stopping slideshow when user presses slideshowbutton. Resets index and clears interval.
     clearInterval(slideshowId);
     setSlideshowId(0);
     setSlideshowIndex(-1);
   }
 
   useEffect(() => {
+    //Hook that listens for keydown
     document.addEventListener("keydown", event => keyboardEvent(event.keyCode), false);
 
     if (params.loading) {
@@ -102,6 +115,7 @@ function Poster() {
 
   if (params.loading) {
     return (
+      //if component is loading, return this.
       <div>
         <div className={params.fullscreen ? styles.PosterFullscreen : styles.Poster} onClick={doneLoading} >
           <div className={styles.Frame} >
@@ -125,6 +139,7 @@ function Poster() {
   }
 
   return (
+    //if component is not loading, display poster and arrowbuttons.
     <div>
       <div className={params.fullscreen ? styles.PosterFullscreen : styles.Poster}>
         {params.slideshow ? <div /> :

@@ -9,7 +9,12 @@ import Parameters from "./Parameters";
 import "./index.css";
 
 function App() {
+  /*main component, using context to handle website state.
+  * Initial states can be seen in Parameters.tsx
+  *
+  */
   const [params, setParams] = useState({
+    //fetches settings from sessionStorage if there are settings to fetch.
     light: parseInt(sessionStorage.getItem("light") || "40"),
     volume: 0,
     animation: (sessionStorage.getItem("animation") || "true") === "true",

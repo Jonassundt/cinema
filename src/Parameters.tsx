@@ -16,6 +16,7 @@ const initialState = {
 
 
 const Parameters = React.createContext({
+  //Context wrapper for the website, with the initial state as described above as parameters.
   params: initialState,
   setParams: (params: any) => { },
 });

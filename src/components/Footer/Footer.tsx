@@ -4,6 +4,9 @@ import styles from './footer.module.css';
 
 function Footer() {
     return (
+        /* Simple footer component.
+        * Returns footer containing text and an image.
+        */
         <div className={styles.Footer}>
             <div >
                 NTNU Datateknologi 2020

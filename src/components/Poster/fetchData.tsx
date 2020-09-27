@@ -8,9 +8,18 @@ import styles from "./fetchData.module.css";
 const movieIds = [37724, 27205, 157336, 272, 278, 1891];
 
 export default class fetchMovie extends React.Component {
+  /* class component that handles fetching from themoviedb API.
+  *
+  */
   static contextType = Parameters;
 
   state = {
+    /* Contains:
+    *Loading: Bool for not displaying data while data is not yet fetched
+    * movie : relevant JSON objects fetched from API, used on the site
+    * apiKEY : api key needed for access to API
+    * posterIndex : index for posters, deciding which movie the API should be called for information on
+    */
     loading: true,
     movie: { title: "", tagline: "", overview: "" },
     movieIds,
@@ -19,6 +28,8 @@ export default class fetchMovie extends React.Component {
   };
 
   fetchData = async () => {
+    /* Async method, fetching the relevant JSON objects
+    */
     const posterIndex = this.context.params.posterIndex;
     const response = await fetch(
       `https://api.themoviedb.org/3/movie/${movieIds[posterIndex]}?api_key=${this.state.apiKey}`);
@@ -27,14 +38,20 @@ export default class fetchMovie extends React.Component {
   }
 
   async componentDidMount() {
+    /* LifeCycle method, fetching data when component is mounted
+    */
     await this.fetchData();
   }
 
   async componentDidUpdate() {
+    /* LifeCycle method, updating movie data if another movie is displayed in Poster.tsx
+    */
     if (this.context.params.posterIndex !== this.state.posterIndex) await this.fetchData();
   }
 
   render() {
+    /* Renders content, changes depending on which movie information is to be displayed
+    */
     return (
       <div>
         {this.state.loading || !this.state.movie ? (
