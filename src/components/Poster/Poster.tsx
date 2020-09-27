@@ -73,14 +73,6 @@ function Poster() {
     }
   }
 
-  const keyboardEvent = (c: Number) => {
-    // Method for handling keyboard events.
-    // 37 is index for rightarrowbutton, 39 for leftarrowbutton.
-    if (c === 37) prevPoster();
-    else if (c === 39) nextPoster();
-    return;
-  };
-
   const startSlideshow = () => {
     //Method for starting slideshow when user presses slideshowbutton. Sets index, and interval
     setSlideshowIndex((params.posterIndex + 1) % posters.length);
@@ -96,9 +88,6 @@ function Poster() {
   }
 
   useEffect(() => {
-    //Hook that listens for keydown
-    document.addEventListener("keydown", event => keyboardEvent(event.keyCode), false);
-
     if (params.loading) {
       setTimeout(() => doneLoading(), 4900);
     }
@@ -111,13 +100,14 @@ function Poster() {
     else if (params.slideshow && slideshowIndex > -1) {
       nextPoster(slideshowIndex);
     }
-  }, [params.slideshow, params.posterIndex, slideshowId, slideshowIndex, setSlideshowIndex]);
+  }, [params.slideshow, params.loading, slideshowId, slideshowIndex, setSlideshowIndex]);
+
 
   if (params.loading) {
     return (
-      //if component is loading, return this.
+      //if component is loading, return this. This loading is artificial, to be able to play a nice loading animation
       <div>
-        <div className={params.fullscreen ? styles.PosterFullscreen : styles.Poster} onClick={doneLoading} >
+        <div className={params.fullscreen ? styles.PosterFullscreen : styles.Poster} >
           <div className={styles.Frame} >
             <div className={styles.Loader} style={params.fullscreen ? { height: "1500px", width: "100%" } : { height: "800px", width: "1300px" }}>
               <div className={styles.Circle1}></div>

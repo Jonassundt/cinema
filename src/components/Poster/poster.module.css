@@ -23,7 +23,7 @@
 .LeftAnimation,
 .RightAnimation {
   height: 800px;
-  transition: 4s;
+  transition: 2s;
   transition-property: filter;
 }
 
