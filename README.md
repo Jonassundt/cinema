@@ -1,4 +1,3 @@
-
 #Moderne Hjemmekino
 
 ## Team 60, Prosjekt 2
@@ -36,7 +35,7 @@ Vi har valgt å benytte oss utelukkende av tekst i knapper i stedet for symboler
 Dette valget ble tatt for å utelukke misforståelser basert på ambiguøse og vage symboler.
 Knapper med tekst i forklarer svært bra hvilken funksjonalitet som omhandles.
 
-###SVG
+### SVG
 
 Teamet benyttet seg utelukkende av SVG-formatet for å lage bildene på nettsiden. 
 Disse ble lagd ved hjelp av Adobe Illustrator, grunnet mulighet for mer komplekse illustrasjoner enn 
@@ -47,19 +46,19 @@ Denne funksjonaliteten er implementert ved å tildele SVG-elementene en animasjo
 kjører når klassen er tildelt.
 Vi valgte å løse det på denne måten fordi det er standard prosedyre for animasjoner i css.
 
-###AJAX
+### AJAX
 Datainnhenting fra API ble gjort med Asynchronous JavaScript. 
 For å aksessere API-et måtte teamet applye for en API-nøkkel, noe vi heldigvis fikk.
 Følgelig ligger API-nøkkelen i state i Components/Poster/fetchData.tsx.
 Dette er ikke best practice i forhold til sikkerhet, men med tanke på at vi ikke har en backend er dette løsningen vi har gått for. 
 På denne måten oppfyller websiden alle krav til AJAX.
 
-###HTML Web Storage
+### HTML Web Storage
 Vi har valgt å implementere HTML Web Storage ved å la brukeren velge sine favorittfilmplakater, og deretter kunne velge å utelukkende
 displaye sine favoritter i karusellen nederst på websiden.
 Vi valgte denne funksjonaliteten, da ingen annen funksjonalitet virket formålsmessig å implementere med Web Storage.
 
-###Responsive Web Design
+### Responsive Web Design
 Websiden er utviklet med responsivitet i tankene.
 Webelementer tilpasser seg skjermens størrelse og orientering, og har et eget design for datamaskin, nettbrett, og mobil.
 Designet er fleksibelt med tanke på viewport, og er dynamisk om en endrer høyde- og/eller breddeformat.
@@ -70,18 +69,18 @@ vil bruker bli presentert med en slider som gir pen visning av alle filmplakatko
 Både Viewport, media queries, skalerende bilder, og flytende/fleksibel layout er implementert i løsningen, uten bruk av eksterne css-rammeverk.
 Dermed oppfyller websiden alle kravene til responsivitet, i henhold til oppgavebeskrivelsen.
 
-###Node.js og npm
+### Node.js og npm
 Prosjektet er basert på Node.js og npm, i henhold til kravene. Vi benyttet oss av pakken create-react-app med TypeScript for å 
 initialisere prosjektet. Bruk av TypeScript, som er et supersett av Javascript, har ingen påvirkning på hvordan koden
 leses av nettleseren. TypeScript-kode blir kompilert til vanlig Javascript, og er følgelig bare til for å gi utviklere
 mer kontroll og oversikt over koden ved innføring av variabeltyper.
 
-###Testing
+### Testing
 
 TODO
 
 
-###Bruk av Git, Koding
+### Bruk av Git, Koding
 Som nevnt, benyttet gruppen seg av Googles kodekonvensjon for JavaScript. Prosjektkoden er følgelig ryddig strukturert, fornuftig kommentert,
 og navngivning av komponenter, variable og funksjoner i tråd med kodekonvensjonen.
 Gruppen har i stor grad benyttet seg av Git issues under utvikling, og tagget commits med tilhørende issue. Gruppen benyttet seg først av issues i stor grad
