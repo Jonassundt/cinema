@@ -86,8 +86,6 @@
 
 
 
-
-
 @keyframes bond {
   25% {
     transform: translateX(-330px) translateY(400px) rotate(-30deg);
@@ -187,12 +185,180 @@
   }
 }
 
-.InceptionAnimation {
-  border: 4px solid rgb(0, 255, 34);
+@keyframes spinningtop {
+
+  25% {
+    transform: translateX(15px) translateY(3px) rotate(0.5deg);
+  }
+
+  75% {
+    transform: translateX(-15px) translateY(-3px) rotate(0.5deg);
+  }
 }
 
-.BatmanAnimation {
-  border: 4px solid rgb(72, 255, 0);
+@keyframes speedline1 {
+  10% {
+    stroke-opacity: 1;
+  }
+  20% {
+    stroke-opacity: 0;
+  }
+  30%{
+    stroke-opacity: 1;
+  }
+  40%{
+    stroke-opacity: 0;
+  }
+  50%{
+    stroke-opacity: 1;
+  }
+  60%{
+    stroke-opacity: 0;
+  }
+  70%{
+    stroke-opacity: 1;
+  }
+  80%{
+    stroke-opacity: 0;
+  }
+  90%{
+    stroke-opacity: 1;
+  }
+  100%{
+    stroke-opacity: 0;
+  }
+}
+
+@keyframes speedline2 {
+  10% {
+    stroke-opacity: 0;
+  }
+  20% {
+    stroke-opacity: 1;
+  }
+  30%{
+    stroke-opacity: 0;
+  }
+  40%{
+    stroke-opacity: 1;
+  }
+  50%{
+    stroke-opacity: 0;
+  }
+  60%{
+    stroke-opacity: 1;
+  }
+  70%{
+    stroke-opacity: 0;
+  }
+  80%{
+    stroke-opacity: 1;
+  }
+  90%{
+    stroke-opacity: 0;
+  }
+  100%{
+    stroke-opacity: 1;
+  }
+}
+
+.InceptionAnimation #sulamitten{
+  animation: spinningtop 3s infinite;
+}
+
+.InceptionAnimation .rightspinner {
+  animation: speedline1 2s infinite;
+}
+
+.InceptionAnimation .leftspinner {
+  animation: speedline2 2s infinite;
+}
+
+@keyframes lightningblink1 {
+  25% {
+    opacity: 0;
+  }
+  26% {
+    opacity: 1;
+  }
+
+  27% {
+    opacity: 0;
+  }
+
+  60% {
+    opacity: 0;
+  }
+
+  61% {
+    opacity: 1;
+  }
+
+  62% {
+    opacity: 0;
+  }
+
+  70% {
+    opacity: 1;
+  }
+
+  90%{
+    opacity: 0;
+  }
+
+}
+
+@keyframes lightningblink2 {
+  27% {
+    opacity: 0;
+  }
+  28% {
+    opacity: 1;
+  }
+
+  29% {
+    opacity: 0;
+  }
+
+  62% {
+    opacity: 0;
+  }
+
+  63% {
+    opacity: 1;
+  }
+
+  65% {
+    opacity: 0;
+  }
+
+  70% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 0;
+  }
+
+}
+
+@keyframes batmanmoving {
+
+  25%{
+    transform: scale(1.1) translateX(-30px) translateY(-100px);
+  }
+}
+
+.BatmanAnimation .st1 , .BatmanAnimation .st2{
+  animation: lightningblink1 3s infinite;
+}
+
+.BatmanAnimation .st2{
+  animation: lightningblink2 3s infinite;
+}
+
+.BatmanAnimation #batboy,.BatmanAnimation .st3, .BatmanAnimation .st3{
+  animation: batmanmoving 3s infinite;
 }
 
 .ShawshankAnimation {

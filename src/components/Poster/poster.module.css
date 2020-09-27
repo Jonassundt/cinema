@@ -23,6 +23,8 @@
 .LeftAnimation,
 .RightAnimation {
   height: 800px;
+  transition: 4s;
+  transition-property: filter;
 }
 
 .PosterFullscreen .Frame,
@@ -52,8 +54,7 @@
   cursor: pointer;
 }
 
-.Description,
-.DescriptionFullscreen {
+.Description {
   margin-top: 20px;
   padding: 40px 60px;
   border-radius: 20px;
@@ -61,16 +62,6 @@
   background: #3333338e;
   line-height: 1.6em;
   min-height: 150px;
-}
-
-.DescriptionFullscreen {
-  position: absolute;
-  top: 1640px;
-  margin-top: 140px;
-  max-width: 80%;
-  left: 45%;
-  margin-left: -40%;
-  border-radius: 12px;
 }
 
 .DescriptionText {
@@ -135,8 +126,6 @@
 
 .Loader {
   position: absolute;
-  height: 800px;
-  width: 1300px;
   background: radial-gradient(#ffffff7c, #22212181);
   border-radius: 12px;
   overflow: hidden;
@@ -249,5 +238,41 @@
   }
   20.01%,100% {
       opacity: 0;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+	.Description {
+    padding: 20px;
+    border-radius: 0 0 12px 12px;
+    margin-top: 0;
+  }
+  .LeftAnimation, .RightAnimation,
+  .Frame {
+    height: auto;
+  }
+  .LeftAnimation svg, .RightAnimation svg,
+  .Frame svg {
+    width: 80vw;
+    height: 106vw;
+  }
+  .ArrowButtons,
+  .ArrowButtons:hover {
+    width: 70px;
+    margin: 0;
+  }
+  .PosterFullscreen .LeftAnimation, .PosterFullscreen .RightAnimation,
+  .PosterFullscreen .Frame {
+    height: auto;
+  }
+  .PosterFullscreen {
+    min-width: auto;
+    width: 100%;
+    margin-left: 0;
+    left: 0;
+  }
+  .Poster {
+    border-radius: 12px 12px 0 0;
+    min-width: auto;
   }
 }

@@ -1,4 +1,4 @@
-.container {
+.Container {
     display: flex;
     height: auto;
     width: auto;
@@ -8,7 +8,7 @@
     color: rgb(185, 185, 185);
 }
 
-.title {
+.Title {
     font-size: 4.5em;
     line-height: 1em;
     font-weight: 600;
@@ -18,7 +18,7 @@
     margin-bottom: 0.5em;
 }
 
-.tagline {
+.Tagline {
     background-color: #5d5d5d6b;
     padding: 20px;
     border-radius: 12px;
@@ -30,9 +30,21 @@
     max-width: 200px;
 }
 
-.overview {
+.Overview {
     font-size: 1.4em;
     line-height: 1.5em;
     padding: 0 50px;
     padding-bottom: 30px;
+}
+
+@media only screen and (max-width: 1300px) {
+    .Container {
+    font-size: 0.8em;
+    }
+.Tagline {
+    margin-right: auto;
+}
+.Title {
+margin-top: 0.5em;
+}
 }

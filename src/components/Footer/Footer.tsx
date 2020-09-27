@@ -5,8 +5,11 @@ import styles from './footer.module.css';
 function Footer() {
     return (
         <div className={styles.Footer}>
-            Laget av Jens og Jonas^2. 2020
+            <div >
+                NTNU Datateknologi 2020
         </div>
+            <img src="icons/react.svg" alt="" width="60" height="60" /></div>
+
     );
 }
 

@@ -40,10 +40,10 @@ export default class fetchMovie extends React.Component {
         {this.state.loading || !this.state.movie ? (
           <div>Loading...</div>
         ) : (
-            <div className={styles.container}>
-              <div className={styles.tagline}>"{this.state.movie.tagline}"</div>
-              <div className={styles.title}>{this.state.movie.title}</div>
-              <div className={styles.overview}>{this.state.movie.overview}</div>
+            <div className={styles.Container}>
+              <div className={styles.Tagline}>"{this.state.movie.tagline}"</div>
+              <div className={styles.Title}>{this.state.movie.title}</div>
+              <div className={styles.Overview}>{this.state.movie.overview}</div>
             </div>
           )}
       </div>

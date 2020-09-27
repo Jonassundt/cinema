@@ -22,7 +22,7 @@ function Poster() {
   const setPosterIndex = (posterIndex: number) => setParams({ ...params, posterIndex });
   const [leftAnimation, setLeftAnimation] = useState(false);
   const [rightAnimation, setRightAnimation] = useState(false);
-  const [loading, setLoading] = useState(true);
+  const doneLoading = () => setParams({ ...params, loading: false })
   const [slideshowId, setSlideshowId] = useState(0);
   const [slideshowIndex, setSlideshowIndex] = useState(0);
 
@@ -32,6 +32,7 @@ function Poster() {
     setTimeout(() =>
       setPosterIndex((params.posterIndex + posters.length - 1) % posters.length), 400); //Ensures that modulo works correctly.
     setTimeout(() => setLeftAnimation(false), 800);
+    sessionStorage.setItem("posterIndex", ((params.posterIndex + posters.length - 1) % posters.length).toString());
   }
 
   const nextPoster = (slideshowIndex: number = -1) => {
@@ -40,6 +41,7 @@ function Poster() {
     setTimeout(() =>
       slideshowIndex >= 0 ? setPosterIndex(slideshowIndex) : setPosterIndex((params.posterIndex + 1) % posters.length), 400);
     setTimeout(() => setRightAnimation(false), 800)
+    sessionStorage.setItem("posterIndex", ((params.posterIndex + 1) % posters.length).toString());
   }
 
   const playSound = () => {
@@ -84,8 +86,8 @@ function Poster() {
   useEffect(() => {
     document.addEventListener("keydown", event => keyboardEvent(event.keyCode), false);
 
-    if (loading) {
-      setTimeout(() => setLoading(false), 4900);
+    if (params.loading) {
+      setTimeout(() => doneLoading(), 4900);
     }
     else if (params.slideshow && !slideshowId) { //hvis det ikke kjøres slideshow nå, og slideshow-variabel er sann, start slideshow
       startSlideshow();
@@ -98,12 +100,12 @@ function Poster() {
     }
   }, [params.slideshow, params.posterIndex, slideshowId, slideshowIndex, setSlideshowIndex]);
 
-  if (loading) {
+  if (params.loading) {
     return (
       <div>
-        <div className={styles.Poster} onClick={() => setLoading(false)} >
+        <div className={params.fullscreen ? styles.PosterFullscreen : styles.Poster} onClick={doneLoading} >
           <div className={styles.Frame} >
-            <div className={styles.Loader}>
+            <div className={styles.Loader} style={params.fullscreen ? { height: "1500px", width: "100%" } : { height: "800px", width: "1300px" }}>
               <div className={styles.Circle1}></div>
               <div className={styles.Circle2}></div>
               <div className={styles.Niddle}></div>
@@ -113,10 +115,11 @@ function Poster() {
             </div>
           </div>
         </div>
-        <div className={styles.Description}>
-          <div className={styles.DescriptionText}>
-          </div>
-        </div>
+        {params.fullscreen ? null :
+          <div className={styles.Description}>
+            <div className={styles.DescriptionText}>
+            </div>
+          </div>}
       </div>
     )
   }
@@ -142,13 +145,14 @@ function Poster() {
             onClick={() => { nextPoster(); playSound() }}
           />}
       </div>
-      <div className={params.fullscreen ? styles.DescriptionFullscreen : styles.Description}>
-        {leftAnimation || rightAnimation ? null : (
-          <div className={styles.DescriptionText}>
-            <FetchMovie />
-          </div>
-        )}
-      </div>
+      {params.fullscreen ? null :
+        <div className={styles.Description}>
+          {leftAnimation || rightAnimation ? null : (
+            <div className={styles.DescriptionText}>
+              <FetchMovie />
+            </div>
+          )}
+        </div>}
     </div>
   );
 }
