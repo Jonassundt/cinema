@@ -10,6 +10,9 @@ import { ReactComponent as Shawshank } from "./shawshank.svg";
 const height = 400;
 
 const posters = [
+  /* Formatted posters.
+  *  Contains list of poster SVGs, with redefined scaling.
+  */
   <Bond name="Jamesbond" height={height} width={height / 1.333} />,
   <Inception name="Inception" height={height} width={height / 1.333} />,
   <Interstellar name="Interstellar" height={height} width={height / 1.333} />,

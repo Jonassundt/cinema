@@ -16,6 +16,7 @@ type PosterElementState = {
 };
 
 class PosterElement extends React.Component<
+// Displays the poster that is to be showed.
   PosterElementProps,
   PosterElementState
   > {
@@ -27,6 +28,11 @@ class PosterElement extends React.Component<
   static contextType = Parameters;
 
   playAudio = () => {
+    /*Method for playing audio.
+    * If this.state.playing is false when playAudio is called, load the correct sound and play it in a loop.
+    *
+    * 
+    */
     if (!this.state.playing) {
       this.state.audio.load();
       this.state.audio.play();
@@ -39,6 +45,8 @@ class PosterElement extends React.Component<
   };
 
   componentDidMount() {
+    //Lifecycle method to initiate playing music related to the given displayed poster.
+    //Uses naming convention in mp3files to play the correct soundtrack.
     const audio = new Audio(`/sounds/${this.props.poster.props.name}.mp3`);
     this.setState({ audio, audioIndex: this.context.params.posterIndex });
     if (this.context.params.volume) {
@@ -47,6 +55,7 @@ class PosterElement extends React.Component<
   }
 
   componentDidUpdate() {
+    //Lifecycle method to change playing music related to the new displayed poster.
     if (this.state.audioIndex === this.context.params.posterIndex) {
       if (this.context.params.volume) {
         this.playAudio();
@@ -67,6 +76,7 @@ class PosterElement extends React.Component<
   }
 
   render() {
+    //render the poster with the given size and scaling defined in props.
     const animationName = this.props.poster.props.name + "Animation";
 
     const props = {

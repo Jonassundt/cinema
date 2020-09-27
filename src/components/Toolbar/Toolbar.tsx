@@ -7,6 +7,10 @@ import Parameters from "../../Parameters";
 import styles from './toolbar.module.css';
 
 function Toolbar() {
+    /* Hooks to handle the parameters given in the toolbar element.
+    *The parameters controls how the website is to be displayed.
+    * Parameters control brightness, volume, animations, colours, fullscreenmode, slideshowmode and if the user wishes to only see his/her favourite posters.
+    */
     const { params, setParams } = useContext(Parameters);
     const setLight = (light: Number) => { sessionStorage.setItem("light", (light).toString()); setParams({ ...params, light }) };
     const setVolume = (volume: Number) => setParams({ ...params, volume });
@@ -41,6 +45,7 @@ function Toolbar() {
     }
 
     const slideshow = () => {
+        //Method to initiate slideshow mode
         if (!params.slideshow) {
             const id = setInterval(() => setSlideshowBar(prev => (prev + 0.1) % 15), 100)
             setSlideShowIntervalId(parseInt(id.toString()));

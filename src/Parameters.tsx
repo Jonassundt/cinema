@@ -1,6 +1,9 @@
 import React from "react";
 
 const initialState = {
+  /* Initial state for the websites parameters.
+  *  all settings can be modified by the user via the GUI.
+  */
   light: 40,
   volume: 0,
   animation: false,
@@ -15,6 +18,7 @@ const initialState = {
 
 
 const Parameters = React.createContext({
+  //Context wrapper for the website, with the initial state as described above as parameters.
   params: initialState,
   setParams: (params: any) => { },
 });
