@@ -28,8 +28,6 @@
 }
 
 
-
-
 @keyframes bond {
   25% {
     transform: translateX(-330px) translateY(400px) rotate(-30deg);

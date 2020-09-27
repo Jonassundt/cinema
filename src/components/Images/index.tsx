@@ -11,9 +11,9 @@ const height = 400;
 
 const posters = [
   <Bond name="Jamesbond" height={height} width={height / 1.333} />,
-  <Inception name="Inception" height={height} width="265" />,
+  <Inception name="Inception" height={height} width={height / 1.333} />,
   <Interstellar name="Interstellar" height={height} width={height / 1.333} />,
-  <Batman name="Batman" height={height} width="265" />,
+  <Batman name="Batman" height={height} width={height / 1.333} />,
   <Shawshank name="Shawshank" height={height} width={height / 1.333} />,
   <Starwars name="Starwars" height={height} width={height / 1.333} />,
 ];

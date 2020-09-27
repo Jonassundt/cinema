@@ -1,14 +1,18 @@
-.Toolbar, .ToolbarFullscreen {
+  .Toolbar, .ToolbarFullscreen {
     padding: 20px;
-    background: #2f2f2f8e;
+    background: #171a36;
     border-radius: 20px;
     text-align: center;   
-    margin-bottom: 100px; 
+    margin-bottom: 60px; 
     display: flex;
     transition: 0.8s;
+    z-index: 15;
+    min-height: 113px;
 }
 
 .ToolbarFullscreen {
+    position: sticky;
+    top: 45px;
     margin-bottom: 40px;
     margin-top: 40px;
 }
@@ -49,7 +53,6 @@
     height: 30px;
     margin-top: 10px;
 }
-
 
 .Toggle {
     background: rgba(133, 133, 133, 0.525);

@@ -9,7 +9,8 @@ const initialState = {
   slideshow: false,
   posterIndex: 0,
   favorites: [0],
-  showFavorites: false
+  showFavorites: false,
+  loading: true
 }
 
 

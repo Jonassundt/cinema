@@ -22,7 +22,7 @@ function Poster() {
   const setPosterIndex = (posterIndex: number) => setParams({ ...params, posterIndex });
   const [leftAnimation, setLeftAnimation] = useState(false);
   const [rightAnimation, setRightAnimation] = useState(false);
-  const [loading, setLoading] = useState(true);
+  const doneLoading = () => setParams({ ...params, loading: false })
   const [slideshowId, setSlideshowId] = useState(0);
   const [slideshowIndex, setSlideshowIndex] = useState(0);
 
@@ -86,8 +86,8 @@ function Poster() {
   useEffect(() => {
     document.addEventListener("keydown", event => keyboardEvent(event.keyCode), false);
 
-    if (loading) {
-      setTimeout(() => setLoading(false), 4900);
+    if (params.loading) {
+      setTimeout(() => doneLoading(), 4900);
     }
     else if (params.slideshow && !slideshowId) { //hvis det ikke kjøres slideshow nå, og slideshow-variabel er sann, start slideshow
       startSlideshow();
@@ -100,10 +100,10 @@ function Poster() {
     }
   }, [params.slideshow, params.posterIndex, slideshowId, slideshowIndex, setSlideshowIndex]);
 
-  if (loading) {
+  if (params.loading) {
     return (
       <div>
-        <div className={params.fullscreen ? styles.PosterFullscreen : styles.Poster} onClick={() => setLoading(false)} >
+        <div className={params.fullscreen ? styles.PosterFullscreen : styles.Poster} onClick={doneLoading} >
           <div className={styles.Frame} >
             <div className={styles.Loader} style={params.fullscreen ? { height: "1500px", width: "100%" } : { height: "800px", width: "1300px" }}>
               <div className={styles.Circle1}></div>
@@ -115,10 +115,11 @@ function Poster() {
             </div>
           </div>
         </div>
-        <div className={params.fullscreen ? styles.DescriptionFullscreen : styles.Description}>
-          <div className={styles.DescriptionText}>
-          </div>
-        </div>
+        {params.fullscreen ? null :
+          <div className={styles.Description}>
+            <div className={styles.DescriptionText}>
+            </div>
+          </div>}
       </div>
     )
   }
@@ -144,13 +145,14 @@ function Poster() {
             onClick={() => { nextPoster(); playSound() }}
           />}
       </div>
-      <div className={params.fullscreen ? styles.DescriptionFullscreen : styles.Description}>
-        {leftAnimation || rightAnimation ? null : (
-          <div className={styles.DescriptionText}>
-            <FetchMovie />
-          </div>
-        )}
-      </div>
+      {params.fullscreen ? null :
+        <div className={styles.Description}>
+          {leftAnimation || rightAnimation ? null : (
+            <div className={styles.DescriptionText}>
+              <FetchMovie />
+            </div>
+          )}
+        </div>}
     </div>
   );
 }

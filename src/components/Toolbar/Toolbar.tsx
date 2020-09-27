@@ -62,8 +62,15 @@ function Toolbar() {
 
     }, [params, slideShowIntervalId])
 
+    if (params.loading) {
+        return (
+            <div className={params.fullscreen ? styles.ToolbarFullscreen : styles.Toolbar}>
+            </div>
+        )
+    }
+
     return (
-        <div>
+        <div style={{ display: "unset" }}>
             <div className={params.fullscreen ? styles.ToolbarFullscreen : styles.Toolbar}>
                 {/* Lyssetting */}
                 <div>

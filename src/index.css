@@ -15,8 +15,7 @@ code {
 .Background {
   background-color: #202736;
   padding-bottom: 100px;
-  min-height: 2200px;
-  overflow: hidden;
+  min-height: 1700px;
 }
 
 .App {
@@ -31,7 +30,7 @@ code {
 .App-header {
   padding: 60px 0;
   font-size: 2.1em;
-  color: rgb(228, 228, 228);
+  color: rgb(230, 230, 230);
 }
 
 .TopRow {

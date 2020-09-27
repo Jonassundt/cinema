@@ -23,6 +23,8 @@
 .LeftAnimation,
 .RightAnimation {
   height: 800px;
+  transition: 4s;
+  transition-property: filter;
 }
 
 .PosterFullscreen .Frame,
@@ -52,8 +54,7 @@
   cursor: pointer;
 }
 
-.Description,
-.DescriptionFullscreen {
+.Description {
   margin-top: 20px;
   padding: 40px 60px;
   border-radius: 20px;
@@ -61,16 +62,6 @@
   background: #3333338e;
   line-height: 1.6em;
   min-height: 150px;
-}
-
-.DescriptionFullscreen {
-  position: absolute;
-  top: 1640px;
-  margin-top: 140px;
-  max-width: 80%;
-  left: 45%;
-  margin-left: -40%;
-  border-radius: 12px;
 }
 
 .DescriptionText {
