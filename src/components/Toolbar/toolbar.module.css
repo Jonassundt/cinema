@@ -109,3 +109,29 @@
 .SlideText {
     width: 160px;
 }
+
+
+@media only screen and (max-width: 1100px) {
+	.Toolbar, .ToolbarFullscreen {
+      flex-wrap: wrap;
+      position: relative;
+    }
+    .ToolbarFullscreen {
+        margin-top: 0;
+        margin-bottom: 100px;
+    }
+    .Toggle,
+    .Button {
+        flex-grow: 1;
+    }
+  }
+
+  @media only screen and (max-width: 800px) {
+    .Toggle,
+    .Button {
+        padding: 20px;
+    }
+    .ButtonBar {
+        height: 70px;
+    }
+  }

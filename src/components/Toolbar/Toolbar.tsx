@@ -79,7 +79,8 @@ function Toolbar() {
                         <div onClick={() => params.light < 70 && setLight(params.light + 5)}>+</div>
                         <div>{(params.light - 40) * 3}</div>
                         <div onClick={() => params.light > 40 && setLight(params.light - 5)}>-</div>
-                    </div></div>
+                    </div>
+                </div>
                 <div>
                     {/* Volum */}
                     <img className={styles.Icon} src={"/icons/volume.svg"} alt="" />

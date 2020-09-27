@@ -240,3 +240,39 @@
       opacity: 0;
   }
 }
+
+@media only screen and (max-width: 1300px) {
+	.Description {
+    padding: 20px;
+    border-radius: 0 0 12px 12px;
+    margin-top: 0;
+  }
+  .LeftAnimation, .RightAnimation,
+  .Frame {
+    height: auto;
+  }
+  .LeftAnimation svg, .RightAnimation svg,
+  .Frame svg {
+    width: 80vw;
+    height: 106vw;
+  }
+  .ArrowButtons,
+  .ArrowButtons:hover {
+    width: 70px;
+    margin: 0;
+  }
+  .PosterFullscreen .LeftAnimation, .PosterFullscreen .RightAnimation,
+  .PosterFullscreen .Frame {
+    height: auto;
+  }
+  .PosterFullscreen {
+    min-width: auto;
+    width: 100%;
+    margin-left: 0;
+    left: 0;
+  }
+  .Poster {
+    border-radius: 12px 12px 0 0;
+    min-width: auto;
+  }
+}

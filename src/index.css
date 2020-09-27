@@ -14,8 +14,8 @@ code {
 
 .Background {
   background-color: #202736;
-  padding-bottom: 100px;
-  min-height: 1700px;
+  padding-bottom: 80px;
+  min-height: 1750px;
 }
 
 .App {
@@ -35,4 +35,24 @@ code {
 
 .TopRow {
   height: 2px;
+}
+
+body::-webkit-scrollbar {
+  width: 0.6em;
+}
+ 
+body::-webkit-scrollbar-track {
+  background-color: rgb(0, 0, 40);
+}
+ 
+body::-webkit-scrollbar-thumb {
+  background-color: #5d5d5d8e;
+  margin-right: 5px;
+  border-radius: 6px;
+}
+
+@media only screen and (max-width: 1300px) {
+  .App-header {
+text-align: center;
+  }
 }
