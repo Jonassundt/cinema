@@ -23,8 +23,8 @@ function Toolbar() {
     };
     const [slideShowIntervalId, setSlideShowIntervalId] = useState(0);
     const [slideshowBar, setSlideshowBar] = useState(0);
-    const setFavorite = () => setParams({ ...params, favorites: toggleIndexFavorite() })
-    //Ønsker at appendFavorite skal appende movieIndex til params.favorites - arrayen.
+    const setFavorite = () => setParams({ ...params, favorites: toggleIndexFavorite() });
+    const setMood = () => { sessionStorage.setItem("mood", (!params.mood).toString()); setParams({ ...params, mood: !params.mood }) };
 
     const toggleIndexFavorite = () => { //Legge til movieIndex hvis den eksisterer i params.favorites,
         // Eller fjerne den fra lista om den allerede eksisterer.
@@ -94,6 +94,10 @@ function Toolbar() {
                 <div className={styles.Button} onClick={setAnimation}>Animasjon</div>
                 {/* Sort-hvitt */}
                 <div className={styles.Button} onClick={setColor}>Fargefilm</div>
+                {/* Stemning */}
+                <div className={styles.Button} onClick={setMood}>Stemning</div>
+                {/* Fullskjerm */}
+                <div className={styles.Button} onClick={setFullscreen}>{params.fullscreen ? "Vanlig skjerm" : "Fullskjerm"}</div>
                 {/* Slideshow */}
                 <div className={styles.ButtonBar} onClick={slideshow}>
                     <div className={styles.SlideBar} style={{ width: `${(slideshowBar / 15) * 100}%` }}>
@@ -102,8 +106,6 @@ function Toolbar() {
                         </div>
                     </div>
                 </div>
-                {/* Fullskjerm */}
-                <div className={styles.Button} onClick={setFullscreen}>Fullskjerm</div>
                 {/* Favoritt */}
                 <div className={styles.Row}>
                     <div className={styles.Toggle} onClick={setFavorite}>{params.favorites.includes(params.posterIndex) ? "Fjern" : "Lagre"} favoritt</div>

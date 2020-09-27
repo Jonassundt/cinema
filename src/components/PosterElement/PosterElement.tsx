@@ -68,11 +68,12 @@ class PosterElement extends React.Component<
 
   render() {
     const animationName = this.props.poster.props.name + "Animation";
+    const moodName = this.props.poster.props.name + "Mood";
 
     const props = {
       height: this.props.height,
       width: this.props.height / 1.333,
-      className: this.context.params.animation ? animationName : "",
+      className: `${this.context.params.animation ? animationName : ""}` + " " + `${this.context.params.mood ? moodName : ""}`,
     };
     return React.cloneElement(this.props.poster, props);
   }

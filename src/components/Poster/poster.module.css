@@ -54,6 +54,7 @@
   cursor: pointer;
 }
 
+.DescriptionLight,
 .Description {
   margin-top: 20px;
   padding: 40px 60px;
@@ -62,6 +63,11 @@
   background: #3333338e;
   line-height: 1.6em;
   min-height: 150px;
+  transition: 0.5s;
+}
+
+.DescriptionLight {
+  background: #4747478e;
 }
 
 .DescriptionText {

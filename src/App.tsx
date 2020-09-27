@@ -19,7 +19,8 @@ function App() {
     posterIndex: parseInt(sessionStorage.getItem("posterIndex") || "0"),
     favorites: JSON.parse(localStorage.getItem("favorites") || "[]"),
     showFavorites: (sessionStorage.getItem("showFavorites") || "false") === "true",
-    loading: true
+    loading: true,
+    mood: (sessionStorage.getItem("mood") || "false") === "true",
   });
 
   const providerValue = useMemo(() => ({ params, setParams }), [

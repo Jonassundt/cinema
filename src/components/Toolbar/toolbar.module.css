@@ -52,7 +52,7 @@
     cursor: pointer;
     user-select: none;
     margin: 0 10px;
-    padding: 35px 25px;
+    padding: 35px 20px;
     transition: 0.1s;
     min-width: 75px;
     height: 30px;
@@ -91,6 +91,7 @@
     padding: 0;
     overflow: hidden;
     height: 100px;
+    margin-left: auto;
 }
 
 .Icon {
@@ -133,8 +134,10 @@
         margin-top: 0;
         margin-bottom: 100px;
     }
+    .ButtonBar,
     .Toggle,
     .Button {
         flex-grow: 1;
+        margin-left: 0;
     }
   }

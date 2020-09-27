@@ -2,10 +2,6 @@
   animation: bond 3s infinite;
 }
 
-.JamesbondAnimation .cls-99 {
-  fill: rgb(42, 42, 42);
-}
-
 .JamesbondAnimation .cls-16 {
   animation: bond 3s infinite, bondFire 3s infinite;
 }
@@ -188,7 +184,7 @@
 
 @keyframes interstellarBackground {
   50% {
-    fill: #927933;
+    fill: #5a4a1c;
   }
 }
 
@@ -366,4 +362,79 @@
 
 .BatmanAnimation #batboy,.BatmanAnimation .st3, .BatmanAnimation .st3{
   animation: batmanmoving 3s infinite;
+}
+
+/* --- */
+/* Classes for mood */
+/* --- */
+
+.InterstellarMood #svg_2 {
+  fill: rgb(0, 43, 83);
+  animation: 0;
+}
+
+.InterstellarMood #svg_28 {
+  fill: rgb(1, 88, 170);
+}
+
+.InterstellarMood #svg_16 {
+  fill: rgb(156, 156, 156);
+}
+
+.InterstellarMood #svg_17 {
+  fill: rgb(0, 79, 93);
+}
+
+.InterstellarMood #svg_6 {
+  fill: #8b8870;
+}
+
+.InterstellarMood #svg_1 {
+  fill: #325474;
+}
+
+.InceptionMood #konis {
+  fill: rgb(15, 38, 65);
+}
+
+.InceptionMood #lambo {
+  fill: rgb(61, 83, 107);
+}
+
+.InceptionMood .zt2 {
+ fill: rgb(255, 255, 255); 
+}
+
+.InceptionMood .zt6, 
+.InceptionMood .zt8,
+.InceptionMood .zt9 {
+  fill: rgb(26, 26, 26); 
+}
+
+.JamesbondMood .cls-2 {
+  fill:#5f6268;
+}
+
+.JamesbondMood .cls-3 {
+  fill:#252325;
+}
+
+.JamesbondMood .cls-13, .JamesbondMood .cls-99 {
+  fill: rgb(42, 42, 42)
+}
+
+.JamesbondMood .cls-7, .JamesbondMood .cls-4 {
+  stroke:#231f20;
+}
+
+.JamesbondMood .cls-6 {
+  stroke:#6d6e71
+}
+
+.BatmanMood .st0 {
+  fill: rgb(70, 0, 9);
+}
+
+.ShawshankMood #svg_5 {
+  fill: rgb(2, 26, 58);
 }

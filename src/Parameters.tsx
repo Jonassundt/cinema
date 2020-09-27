@@ -10,7 +10,8 @@ const initialState = {
   posterIndex: 0,
   favorites: [0],
   showFavorites: false,
-  loading: false
+  loading: false,
+  mood: true
 }
 
 

@@ -116,7 +116,7 @@ function Poster() {
           </div>
         </div>
         {params.fullscreen ? null :
-          <div className={styles.Description}>
+          <div className={params.mood ? styles.Description : styles.DescriptionLight}>
             <div className={styles.DescriptionText}>
             </div>
           </div>}
@@ -146,7 +146,7 @@ function Poster() {
           />}
       </div>
       {params.fullscreen ? null :
-        <div className={styles.Description}>
+        <div className={params.mood ? styles.Description : styles.DescriptionLight}>
           {leftAnimation || rightAnimation ? null : (
             <div className={styles.DescriptionText}>
               <FetchMovie />
