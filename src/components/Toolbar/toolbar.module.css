@@ -132,23 +132,31 @@
       flex-wrap: wrap;
       position: relative;
     }
+    
     .ToolbarFullscreen {
         margin-top: 0;
         margin-bottom: 100px;
     }
+    
     .ButtonBar,
     .Toggle,
-.ButtonActive,
+    .ButtonActive,
     .Button {
         flex-grow: 1;
         margin-left: 0;
         padding: 20px 10px;
     }
+    
     .ButtonBar {
         padding: 0;
-        height: 60px;
+        height: 70px;
     }
+    
     .SlideBar {
-        padding: 20px 0px;
+        padding: 25px 0px;
+    }
+    
+    .ToolbarFullscreen {
+        filter: opacity(100%);
     }
   }

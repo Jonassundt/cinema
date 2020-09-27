@@ -21,7 +21,7 @@ function Toolbar() {
     const toggleFavorites = () => {
         sessionStorage.setItem("showFavorites", (!params.showFavorites).toString());
         window.scroll({
-            top: 4000,
+            top: 1200,
             behavior: 'smooth'
         }); setParams({ ...params, showFavorites: !params.showFavorites })
     };
@@ -64,7 +64,6 @@ function Toolbar() {
             setSlideShowIntervalId(0);
             setSlideshowBar(0)
         }
-
     }, [params, slideShowIntervalId])
 
     if (params.loading) {
