@@ -46,6 +46,7 @@
 
 .Toggle,
 .ButtonBar,
+.ButtonActive,
 .Button {
     background: #4d4d4d86;
     border-radius: 8px;
@@ -77,6 +78,7 @@
     margin: 10px 10px 0 0;
 }
 
+.ButtonActive,
 .Group:hover,
 .ButtonBar:hover,
 .Button:hover {
@@ -136,8 +138,17 @@
     }
     .ButtonBar,
     .Toggle,
+.ButtonActive,
     .Button {
         flex-grow: 1;
         margin-left: 0;
+        padding: 20px 10px;
+    }
+    .ButtonBar {
+        padding: 0;
+        height: 60px;
+    }
+    .SlideBar {
+        padding: 20px 0px;
     }
   }

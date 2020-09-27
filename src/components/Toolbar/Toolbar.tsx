@@ -96,13 +96,13 @@ function Toolbar() {
                     </div>
                 </div>
                 {/* Animasjoner */}
-                <div className={styles.Button} onClick={setAnimation}>Animasjon</div>
+                <div className={params.animation ? styles.ButtonActive : styles.Button} onClick={setAnimation}>Animasjon</div>
                 {/* Sort-hvitt */}
-                <div className={styles.Button} onClick={setColor}>Fargefilm</div>
+                <div className={params.color ? styles.ButtonActive : styles.Button} onClick={setColor}>Fargefilm</div>
                 {/* Stemning */}
-                <div className={styles.Button} onClick={setMood}>Stemning</div>
+                <div className={params.mood ? styles.ButtonActive : styles.Button} onClick={setMood}>Stemning</div>
                 {/* Fullskjerm */}
-                <div className={styles.Button} onClick={setFullscreen}>{params.fullscreen ? "Vanlig skjerm" : "Fullskjerm"}</div>
+                <div className={params.fullscreen ? styles.ButtonActive : styles.Button} onClick={setFullscreen}>Fullskjerm</div>
                 {/* Slideshow */}
                 <div className={styles.ButtonBar} onClick={slideshow}>
                     <div className={styles.SlideBar} style={{ width: `${(slideshowBar / 15) * 100}%` }}>
