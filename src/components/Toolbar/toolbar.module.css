@@ -5,7 +5,7 @@
     text-align: center;   
     margin-bottom: 60px; 
     display: flex;
-    transition: 0.8s;
+    transition: filter 0.3s, margin 0.8s;
     z-index: 15;
     min-height: 113px;
 }
@@ -15,6 +15,11 @@
     top: 45px;
     margin-bottom: 40px;
     margin-top: 40px;
+    filter: opacity(50%);
+}
+
+.ToolbarFullscreen:hover {
+    filter: opacity(100%)
 }
 
 .Row {
@@ -35,8 +40,8 @@
 
 .Group div:not(:nth-child(2)):hover {
     font-size: 1.2em;
-    margin-top: -0.12em;
-    margin-bottom: -0.12em;
+    margin-top: -0.13em;
+    margin-bottom: -0.13em;
 }
 
 .Toggle,
@@ -55,7 +60,7 @@
 }
 
 .Toggle {
-    background: rgba(133, 133, 133, 0.525);
+    background: rgba(114, 114, 114, 0.525);
     border-radius: 0 8px 8px 0;
     margin: 10px 10px 0 0;
     min-width: 50px;
@@ -67,11 +72,19 @@
     margin: 10px 0 0 10px;
 }
 
-.Toggle:hover,
+.Toggle:first-child:last-child {
+    border-radius: 8px;
+    margin: 10px 10px 0 0;
+}
+
 .Group:hover,
 .ButtonBar:hover,
 .Button:hover {
     background: rgba(119, 119, 119, 0.525);
+}
+
+.Toggle:hover {
+    background: rgba(153, 153, 153, 0.525);
 }
 
 .ButtonBar {
@@ -123,15 +136,5 @@
     .Toggle,
     .Button {
         flex-grow: 1;
-    }
-  }
-
-  @media only screen and (max-width: 800px) {
-    .Toggle,
-    .Button {
-        padding: 20px;
-    }
-    .ButtonBar {
-        height: 70px;
     }
   }

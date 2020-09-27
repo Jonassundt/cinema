@@ -18,7 +18,7 @@ function Gallery() {
     */
     if (params.loading) return;
     sessionStorage.setItem("posterIndex", posterIndex.toString());
-    setParams({ ...params, posterIndex });
+    setParams({ ...params, posterIndex, slideshow: false });
     window.scroll({
       top: 0,
       behavior: 'smooth'
@@ -31,14 +31,15 @@ function Gallery() {
     *If not set to show favourites, show all posters.
     */
     <div className={styles.Gallery}>
-      {posterImages.filter((poster, index) => params.favorites.includes(index) || !params.showFavorites).map((poster, index) => (
-        <div
-          className={styles.Thumbnail}
-          key={index}
-          onClick={() => setPosterIndex(index)}
-        >
-          <div className={styles.SmallPoster}>{poster}</div>
-        </div>
+      {posterImages.map((poster, index) => (
+        (params.favorites.includes(index) || !params.showFavorites) ?
+          <div
+            className={styles.Thumbnail}
+            key={index}
+            onClick={() => setPosterIndex(index)}
+          >
+            <div className={styles.SmallPoster}>{poster}</div>
+          </div> : null
       ))}
     </div>
   );

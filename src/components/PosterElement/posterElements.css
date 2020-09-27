@@ -15,17 +15,82 @@
 }
 
 .ShawshankAnimation #rain {
-  animation: rainDrops 8s infinite;
+  animation: rainDrops 7s infinite;
 }
 
 @keyframes rainDrops {
   99.99% {
-    transform: translateX(-500px) translateY(700px);
+    transform: translateX(-1000px) translateY(1400px);
   }
   to {
     opacity: 0;
   }
 }
+
+.StarwarsAnimation #redbuttons { 
+  animation: switchRed 5s infinite;
+}
+
+@keyframes switchRed {
+  50% {
+    fill: red;
+  }
+}
+
+.StarwarsAnimation #greenbuttons { 
+  animation: switchGreen 2s infinite;
+}
+
+@keyframes switchGreen {
+  50% {
+    fill: #00FF00;
+  }
+}
+
+.StarwarsAnimation #purplebuttons { 
+  animation: switchpurple 3s infinite;
+}
+
+@keyframes switchpurple {
+  50% {
+    fill: #FF66FF;
+  }
+}
+
+.StarwarsAnimation #bluebuttons { 
+  animation: switchblue 6s infinite;
+}
+
+@keyframes switchblue {
+  25% {
+    fill: #99FFFF;
+  }
+  50% {
+    fill:blue;
+  }
+}
+
+
+
+
+
+.StarwarsAnimation #sword {
+  animation: swordAnimation 3s infinite;
+}
+
+@keyframes swordAnimation {
+  0% {
+    transform: translateX(170px) translateY(-500px)
+  }
+  20% {
+    transform: translateX(170px) translateY(-500px);
+    fill: rgb(255, 153, 153);
+  }
+  25% {
+    transform: translateX(0px) translateY(0px) rotate(-2deg)
+  }
+}
+
 
 
 @keyframes bond {
@@ -301,12 +366,4 @@
 
 .BatmanAnimation #batboy,.BatmanAnimation .st3, .BatmanAnimation .st3{
   animation: batmanmoving 3s infinite;
-}
-
-.ShawshankAnimation {
-  border: 4px solid rgb(72, 255, 0);
-}
-
-.StarwarsAnimation {
-  border: 4px solid rgb(72, 255, 0);
 }

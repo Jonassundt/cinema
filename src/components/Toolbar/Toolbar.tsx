@@ -81,16 +81,16 @@ function Toolbar() {
                 <div>
                     <img className={styles.Icon} src={"/icons/brightness.svg"} alt="" />
                     <div className={styles.Group}>
-                        <div onClick={() => params.light < 70 && setLight(params.light + 5)}>+</div>
-                        <div>{(params.light - 40) * 3}</div>
-                        <div onClick={() => params.light > 40 && setLight(params.light - 5)}>-</div>
+                        <div onClick={() => params.light < 77 && setLight(params.light + 4)}>+</div>
+                        <div>{(params.light - 40) * 2.5}</div>
+                        <div onClick={() => params.light > 40 && setLight(params.light - 4)}>-</div>
                     </div>
                 </div>
+                {/* Volum */}
                 <div>
-                    {/* Volum */}
                     <img className={styles.Icon} src={"/icons/volume.svg"} alt="" />
                     <div className={styles.Group}>
-                        <div onClick={() => params.volume < 9 && setVolume(params.volume + 1)}>+</div>
+                        <div onClick={() => params.volume < 10 && setVolume(params.volume + 1)}>+</div>
                         <div>{params.volume * 10}</div>
                         <div onClick={() => params.volume > 0 && setVolume(params.volume - 1)}>-</div>
                     </div>
@@ -113,7 +113,8 @@ function Toolbar() {
                 <div className={styles.Row}>
                     <div className={styles.Toggle} onClick={setFavorite}>{params.favorites.includes(params.posterIndex) ? "Fjern" : "Lagre"} favoritt</div>
                     {/* Favoritter */}
-                    <div className={styles.Toggle} onClick={toggleFavorites}>{params.showFavorites ? "Se alle" : "Se favoritter"}</div>
+                    {params.fullscreen ? null :
+                        <div className={styles.Toggle} onClick={toggleFavorites}>{params.showFavorites ? "Se alle" : "Se favoritter"}</div>}
                 </div>
             </div>
             <div className={styles.SpotRow} style={{ opacity: params.light < 55 ? 0 : 1 }}>
