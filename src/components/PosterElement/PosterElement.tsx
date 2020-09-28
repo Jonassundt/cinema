@@ -19,7 +19,7 @@ type PosterElementState = {
 class PosterElement extends React.Component<
   PosterElementProps,
   PosterElementState
-> {
+  > {
   constructor(props: PosterElementProps) {
     super(props);
     this.state = { playing: false, audio: null, audioIndex: -1 };
@@ -36,10 +36,14 @@ class PosterElement extends React.Component<
     if (!this.state.playing) {
       this.state.audio.load();
       this.state.audio.play();
+      // Har valgt en mindre rigorøs fremgangsmåte her, for å enkelt kombinere innebygget js audio med react
+      // eslint-disable-next-line
       this.state.audio.loop = true;
+      // eslint-disable-next-line
       this.state.audio.volume = this.context.params.volume / 10;
       this.setState({ playing: true });
     } else {
+      // eslint-disable-next-line
       this.state.audio.volume = this.context.params.volume / 10;
     }
   };

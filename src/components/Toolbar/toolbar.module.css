@@ -84,7 +84,7 @@
 .Group:hover,
 .ButtonBar:hover,
 .Button:hover {
-  background: rgba(119, 119, 119, 0.525);
+  background: rgba(133, 133, 133, 0.525);
 }
 
 .Toggle:hover {

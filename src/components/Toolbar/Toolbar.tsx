@@ -160,7 +160,7 @@ function Toolbar() {
           className={params.mood ? styles.ButtonActive : styles.Button}
           onClick={setMood}
         >
-          Stemning
+          Mystisk
         </div>
         {/* Fullskjerm */}
         <div
@@ -179,17 +179,17 @@ function Toolbar() {
               {!params.slideshow ? (
                 "Rullering"
               ) : (
-                <div>
-                  Neste:{" "}
-                  <strong>
-                    {
-                      posterImages[
-                        (params.posterIndex + 1) % posterImages.length
-                      ].props.name
-                    }
-                  </strong>
-                </div>
-              )}
+                  <div>
+                    Neste:{" "}
+                    <strong>
+                      {
+                        posterImages[
+                          (params.posterIndex + 1) % posterImages.length
+                        ].props.name
+                      }
+                    </strong>
+                  </div>
+                )}
             </div>
           </div>
         </div>

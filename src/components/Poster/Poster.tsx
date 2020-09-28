@@ -70,13 +70,18 @@ function Poster() {
     let number = Math.random();
     let url;
     if (number < 0.1) {
-      number = number * 10;
-      if (number > 0.6) {
-        url = "/sounds/villager.mp3";
-      } else if (number > 0.3) {
-        url = "/sounds/o.mp3";
-      } else {
-        url = "/sounds/pig.mp3";
+      if (params.mood) {
+        url = "/sounds/Zombie.mp3";
+      }
+      else {
+        number = number * 10;
+        if (number > 0.6) {
+          url = "/sounds/villager.mp3";
+        } else if (number > 0.3) {
+          url = "/sounds/o.mp3";
+        } else {
+          url = "/sounds/pig.mp3";
+        }
       }
       const audio = new Audio(url);
       audio.load();
@@ -113,12 +118,13 @@ function Poster() {
     } else if (params.slideshow && slideshowIndex > -1) {
       nextPoster(slideshowIndex);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
     params.slideshow,
     params.loading,
     slideshowId,
     slideshowIndex,
-    setSlideshowIndex,
+    setSlideshowIndex
   ]);
 
   if (params.loading) {
