@@ -20,7 +20,7 @@ god, lesbar kode.
 ### React
 
 Dette punktet løste seg ganske greit, da npx har en egen preset for create-react-app med TypeScript.
-Følgelig er løsningen implementert med TypeScript. Både klassekomponenter(Eks: fetching fra API i fetchData.tsx)
+Følgelig er løsningen implementert med TypeScript. Både klassekomponenter (Eks: fetching fra API i fetchData.tsx)
 og funksjonelle komponenter (Eks: Poster.tsx) er benyttet, i henhold til teknologikravene.
 
 I de funksjonelle komponentene har vi benyttet oss av hooks for å håndtere state og av useEffect som alternativ for lifecycle-metoder.
@@ -57,19 +57,22 @@ På denne måten lastes REST-API'et inn dynamisk.
 
 ### HTML Web Storage
 
-Vi har valgt å implementere HTML Web Storage ved å la brukeren velge sine favorittfilmplakater, og deretter kunne velge å utelukkende
+Vi har valgt å implementere localstorage ved å la brukeren velge sine favorittfilmplakater, og deretter kunne velge å utelukkende
 displaye sine favoritter i karusellen nederst på websiden.
 Vi valgte denne funksjonaliteten, da ingen annen funksjonalitet virket formålsmessig å implementere med Web Storage.
+
+Sessionstorage har vi brukt til å huske hvilke plakat som var sist på skjermen, samt. deler av parameteriseringen og valgene som brukeren har gjort.
+Dette gjør at siden feks ikke går ut av fullskjerm, eller glemmer lys-justering når siden oppdateres.
+
 
 ### Responsive Web Design
 
 Websiden er utviklet med responsivitet i tankene.
-Webelementer tilpasser seg skjermens størrelse og orientering, og har et eget design for datamaskin, nettbrett, og mobil.
-Designet er fleksibelt med tanke på viewport, og er dynamisk om en endrer høyde- og/eller breddeformat.
+Webelementer tilpasser seg skjermens størrelse og orientering, og har et flytende design tilpasset datamaskin, nettbrett, og mobil. Våre SVG-elementer er laget i vertikalt format, noe vi utnyttet for å beholde den visuelle dynamikken mest mulig lik på liten og stor skjerm.
+Designet er fleksibelt med tanke på viewport, og er dynamisk om en endrer høyde- og/eller breddeformat, og "kinolerretet" tilpasser seg til begge to.
 
 Spesielt karusellvisningen av kortene har en svært god løsning med tanke på responsivitet. Ved visning av websiden i et nedskalert vindu,
-vil bruker bli presentert med en slider som gir pen visning av alle filmplakatkortene på en god måte.
-
+vil bruker bli presentert med en slider som gir pen visning av alle filmplakat-kortene på en god måte. Dette anså vi som mer praktisk enn alternativer som vertikal scrolling på alle plakatene eller små varianter av hver plakat.
 Både Viewport, media queries, skalerende bilder, og flytende/fleksibel layout er implementert i løsningen, uten bruk av eksterne css-rammeverk.
 Dermed oppfyller websiden alle kravene til responsivitet, i henhold til oppgavebeskrivelsen.
 
@@ -94,14 +97,14 @@ og navngivning av komponenter, variable og funksjoner i tråd med kodekonvensjon
 Gruppen har i stor grad benyttet seg av Git issues under utvikling, og tagget commits med tilhørende issue. Gruppen benyttet seg først av issues i stor grad
 når det ble aktuelt, og de første commits er derfor ikke tagget med issues.
 Dette valget ble gjort, da gruppen følte at dersom hele applikasjonen ble først planlagt og dermet utviklet, ville websiden gå glipp av forbedringer
-som først ble åpenbare etter initiell utvikling ble gjennomført. Ved å ikke benytte issues i begynnelsen, gav vi oss selv mulighet til å finne forbedringer
+som først ble åpenbare etter initiell utvikling ble gjennomført. Ved mindre bruk av issues i begynnelsen, gav vi oss selv mulighet til å finne forbedringer
 i løsningene vi hadde sett for oss, noe som bidro til at websiden ble så bra som den ble.
 
 ### Innhold
 
-Musikken er utdrag fra original filmmusikk. Brukt med avklaring fra faglærer.
+Musikken er utdrag fra original filmmusikk. Brukt med avklaring og godkjenning fra faglærer, gitt at repoet ikke ligger offentlig i ettertid.
 
-# Prosjekt 2
+# Auto React-README:
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
