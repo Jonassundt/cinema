@@ -6,6 +6,7 @@
   text-align: center;
   margin-bottom: 60px;
   display: flex;
+  align-items: center;
   transition: filter 0.3s, margin 0.8s;
   z-index: 15;
   min-height: 113px;
