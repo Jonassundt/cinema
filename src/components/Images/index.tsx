@@ -7,7 +7,7 @@ import { ReactComponent as Inception } from "./inception.svg";
 import { ReactComponent as Starwars } from "./starwars.svg";
 import { ReactComponent as Shawshank } from "./shawshank.svg";
 
-const height = 400;
+const height = 380;
 
 const posters = [
   /* Formatted posters.

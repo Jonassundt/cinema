@@ -79,7 +79,7 @@
     margin: 0 0 100px;
   }
 
-  @keyframes fadein {
+@keyframes fadein {
     0% {
         max-height: 150px;
     }

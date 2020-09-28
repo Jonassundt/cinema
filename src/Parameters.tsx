@@ -11,12 +11,11 @@ const initialState = {
   favorites: [0],
   showFavorites: false,
   loading: false,
-  mood: true
+  mood: false
 }
 
 
 const Parameters = React.createContext({
-  //Context wrapper for the website, with the initial state as described above as parameters.
   params: initialState,
   setParams: (params: any) => { },
 });
