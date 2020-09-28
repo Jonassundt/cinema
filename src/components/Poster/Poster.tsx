@@ -172,23 +172,23 @@ function Poster() {
         {params.slideshow ? (
           <div />
         ) : (
-          <img
-            className={styles.ArrowButtons}
-            src="icons/leftarrow.svg"
-            alt="<"
-            onClick={() => {
-              prevPoster();
-              playSound();
-            }}
-          />
-        )}
+            <img
+              className={styles.ArrowButtons}
+              src="icons/leftarrow.svg"
+              alt="<"
+              onClick={() => {
+                prevPoster();
+                playSound();
+              }}
+            />
+          )}
         <div
           className={
             leftAnimation
               ? styles.LeftAnimation
               : rightAnimation
-              ? styles.RightAnimation
-              : styles.Frame
+                ? styles.RightAnimation
+                : styles.Frame
           }
           style={{ filter: `grayscale(${params.color ? 0 : 1})` }}
         >
@@ -197,16 +197,16 @@ function Poster() {
         {params.slideshow ? (
           <div />
         ) : (
-          <img
-            className={styles.ArrowButtons}
-            src="icons/rightarrow.svg"
-            alt=">"
-            onClick={() => {
-              nextPoster();
-              playSound();
-            }}
-          />
-        )}
+            <img
+              className={styles.ArrowButtons}
+              src="icons/rightarrow.svg"
+              alt=">"
+              onClick={() => {
+                nextPoster();
+                playSound();
+              }}
+            />
+          )}
       </div>
       {params.fullscreen ? null : (
         <div

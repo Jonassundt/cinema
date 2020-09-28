@@ -1,0 +1,140 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing the toolbar matches the snapshot 1`] = `
+<div
+  style={
+    Object {
+      "display": "unset",
+    }
+  }
+>
+  <div
+    className="Toolbar"
+  >
+    <div>
+      <img
+        alt=""
+        className="Icon"
+        src="/icons/brightness.svg"
+      />
+      <div
+        className="Group"
+      >
+        <div
+          onClick={[Function]}
+        >
+          +
+        </div>
+        <div>
+          -100
+        </div>
+        <div
+          onClick={[Function]}
+        >
+          -
+        </div>
+      </div>
+    </div>
+    <div>
+      <img
+        alt=""
+        className="Icon"
+        src="/icons/volume.svg"
+      />
+      <div
+        className="Group"
+      >
+        <div
+          onClick={[Function]}
+        >
+          +
+        </div>
+        <div>
+          0
+        </div>
+        <div
+          onClick={[Function]}
+        >
+          -
+        </div>
+      </div>
+    </div>
+    <div
+      className="Button"
+      onClick={[Function]}
+    >
+      Animasjon
+    </div>
+    <div
+      className="Button"
+      onClick={[Function]}
+    >
+      Fargefilm
+    </div>
+    <div
+      className="Button"
+      onClick={[Function]}
+    >
+      Stemning
+    </div>
+    <div
+      className="Button"
+      onClick={[Function]}
+    >
+      Fullskjerm
+    </div>
+    <div
+      className="ButtonBar"
+      onClick={[Function]}
+    >
+      <div
+        className="SlideBar"
+        style={
+          Object {
+            "width": "0%",
+          }
+        }
+      >
+        <div
+          className="SlideText"
+        >
+          Rullering
+        </div>
+      </div>
+    </div>
+    <div
+      className="Row"
+    >
+      <div
+        className="Toggle"
+        onClick={[Function]}
+      >
+        Fjern
+         
+        favoritt
+      </div>
+      <div
+        className="Toggle"
+        onClick={[Function]}
+      >
+        Se favoritter
+      </div>
+    </div>
+  </div>
+  <div
+    className="SpotRow"
+    style={
+      Object {
+        "opacity": 0,
+      }
+    }
+  >
+    <div
+      className="Spotlight"
+    />
+    <div
+      className="Spotlight"
+    />
+  </div>
+</div>
+`;

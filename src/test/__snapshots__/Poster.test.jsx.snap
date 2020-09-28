@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing the poster matches the snapshot 1`] = `
+<div>
+  <div
+    className="Poster"
+  >
+    <img
+      alt="<"
+      className="ArrowButtons"
+      onClick={[Function]}
+      src="icons/leftarrow.svg"
+    />
+    <div
+      className="Frame"
+      style={
+        Object {
+          "filter": "grayscale(1)",
+        }
+      }
+    >
+      <svg
+        className=" "
+        height={800}
+        name="Jamesbond"
+        width={600.1500375093774}
+      >
+        jamesbond.svg
+      </svg>
+    </div>
+    <img
+      alt=">"
+      className="ArrowButtons"
+      onClick={[Function]}
+      src="icons/rightarrow.svg"
+    />
+  </div>
+  <div
+    className="DescriptionLight"
+  >
+    <div
+      className="DescriptionText"
+    >
+      <div>
+        <div>
+          Loading...
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing the footer matches the snapshot 1`] = `
+<div
+  className="Footer"
+  onClick={[Function]}
+>
+  <div
+    className="Row"
+  >
+    <div
+      className="About"
+    >
+      NTNU Datateknologi 2020
+    </div>
+    <div
+      className="Link"
+    >
+      Rulletekst 
+      ---&gt;
+    </div>
+  </div>
+  <img
+    alt=""
+    height="60"
+    src="icons/react.svg"
+    width="60"
+  />
+</div>
+`;
