@@ -41,10 +41,10 @@
 }
 
 .ArrowButtons {
-    width: 90px;
-    filter: opacity(40%);
-    margin: 0 15px;
-    transition: 0.2s;
+  width: 90px;
+  filter: opacity(40%);
+  margin: 0 15px;
+  transition: 0.2s;
 }
 
 .ArrowButtons:hover {
@@ -124,10 +124,10 @@
 }
 
 .fetchMovie {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;   
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .Loader {
@@ -138,7 +138,7 @@
 }
 
 .Loader::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: 0;
@@ -149,7 +149,7 @@
 }
 
 .Loader::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 50%;
@@ -159,7 +159,8 @@
   background: #000;
 }
 
-.Circle1, .Circle2 {
+.Circle1,
+.Circle2 {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -231,33 +232,38 @@
 
 @keyframes animate {
   0% {
-      transform: rotate(-90deg);
+    transform: rotate(-90deg);
   }
   100% {
-      transform: rotate(270deg);
+    transform: rotate(270deg);
   }
 }
 
 @keyframes animateNum {
-  0%,20% {
-      opacity: 1;
+  0%,
+  20% {
+    opacity: 1;
   }
-  20.01%,100% {
-      opacity: 0;
+  20.01%,
+  100% {
+    opacity: 0;
   }
 }
 
 @media only screen and (max-width: 1300px) {
-	.Description, .DescriptionLight {
+  .Description,
+  .DescriptionLight {
     padding: 20px;
     border-radius: 0 0 12px 12px;
     margin-top: 0;
   }
-  .LeftAnimation, .RightAnimation,
+  .LeftAnimation,
+  .RightAnimation,
   .Frame {
     height: auto;
   }
-  .LeftAnimation svg, .RightAnimation svg,
+  .LeftAnimation svg,
+  .RightAnimation svg,
   .Frame svg {
     width: 80vw;
     height: 106vw;
@@ -267,7 +273,8 @@
     width: 70px;
     margin: 0;
   }
-  .PosterFullscreen .LeftAnimation, .PosterFullscreen .RightAnimation,
+  .PosterFullscreen .LeftAnimation,
+  .PosterFullscreen .RightAnimation,
   .PosterFullscreen .Frame {
     height: auto;
   }

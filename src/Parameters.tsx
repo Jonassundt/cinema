@@ -11,13 +11,12 @@ const initialState = {
   favorites: [0],
   showFavorites: false,
   loading: false,
-  mood: false
-}
-
+  mood: false,
+};
 
 const Parameters = React.createContext({
   params: initialState,
-  setParams: (params: any) => { },
+  setParams: (params: any) => {},
 });
 
 export default Parameters;

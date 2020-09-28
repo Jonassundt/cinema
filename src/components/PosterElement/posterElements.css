@@ -1,4 +1,7 @@
-.JamesbondAnimation .cls-99, .JamesbondAnimation .cls-14, .JamesbondAnimation .cls-15, .JamesbondAnimation .cls-16 {
+.JamesbondAnimation .cls-99,
+.JamesbondAnimation .cls-14,
+.JamesbondAnimation .cls-15,
+.JamesbondAnimation .cls-16 {
   animation: bond 3s infinite;
 }
 
@@ -6,7 +9,7 @@
   animation: bond 3s infinite, bondFire 3s infinite;
 }
 
-.JamesbondAnimation .cls-9  {
+.JamesbondAnimation .cls-9 {
   animation: bondBackground 8s infinite;
 }
 
@@ -23,7 +26,7 @@
   }
 }
 
-.StarwarsAnimation #redbuttons { 
+.StarwarsAnimation #redbuttons {
   animation: switchRed 5s infinite;
 }
 
@@ -33,42 +36,38 @@
   }
 }
 
-.StarwarsAnimation #greenbuttons { 
+.StarwarsAnimation #greenbuttons {
   animation: switchGreen 2s infinite;
 }
 
 @keyframes switchGreen {
   50% {
-    fill: #00FF00;
+    fill: #00ff00;
   }
 }
 
-.StarwarsAnimation #purplebuttons { 
+.StarwarsAnimation #purplebuttons {
   animation: switchpurple 3s infinite;
 }
 
 @keyframes switchpurple {
   50% {
-    fill: #FF66FF;
+    fill: #ff66ff;
   }
 }
 
-.StarwarsAnimation #bluebuttons { 
+.StarwarsAnimation #bluebuttons {
   animation: switchblue 6s infinite;
 }
 
 @keyframes switchblue {
   25% {
-    fill: #99FFFF;
+    fill: #99ffff;
   }
   50% {
-    fill:blue;
+    fill: blue;
   }
 }
-
-
-
-
 
 .StarwarsAnimation #sword {
   animation: swordAnimation 3s infinite;
@@ -76,18 +75,16 @@
 
 @keyframes swordAnimation {
   0% {
-    transform: translateX(170px) translateY(-500px)
+    transform: translateX(170px) translateY(-500px);
   }
   20% {
     transform: translateX(170px) translateY(-500px);
     fill: rgb(255, 153, 153);
   }
   25% {
-    transform: translateX(0px) translateY(0px) rotate(-2deg)
+    transform: translateX(0px) translateY(0px) rotate(-2deg);
   }
 }
-
-
 
 @keyframes bond {
   25% {
@@ -98,7 +95,7 @@
   }
   50% {
     transform: translateX(-330px) translateY(1140px) rotate(-70deg);
-    }
+  }
   75% {
     transform: translateX(-300px) translateY(400px) rotate(-30deg);
   }
@@ -128,13 +125,13 @@
   }
   50% {
     fill: yellow;
-    }
-    52% {
-      fill: black;
-    }
-    73% {
-      fill: black;
-    }
+  }
+  52% {
+    fill: black;
+  }
+  73% {
+    fill: black;
+  }
   75% {
     fill: yellow;
   }
@@ -149,8 +146,13 @@
   }
 }
 
-.InterstellarAnimation #svg_5, .InterstellarAnimation #svg_18, .InterstellarAnimation #svg_19, 
-.InterstellarAnimation #svg_20, .InterstellarAnimation #svg_21, .InterstellarAnimation #svg_22, .InterstellarAnimation #svg_23 {
+.InterstellarAnimation #svg_5,
+.InterstellarAnimation #svg_18,
+.InterstellarAnimation #svg_19,
+.InterstellarAnimation #svg_20,
+.InterstellarAnimation #svg_21,
+.InterstellarAnimation #svg_22,
+.InterstellarAnimation #svg_23 {
   animation: interstellarShip 20s infinite;
 }
 
@@ -189,7 +191,6 @@
 }
 
 @keyframes spinningtop {
-
   25% {
     transform: translateX(15px) translateY(3px) rotate(0.5deg);
   }
@@ -206,28 +207,28 @@
   20% {
     stroke-opacity: 0;
   }
-  30%{
+  30% {
     stroke-opacity: 1;
   }
-  40%{
+  40% {
     stroke-opacity: 0;
   }
-  50%{
+  50% {
     stroke-opacity: 1;
   }
-  60%{
+  60% {
     stroke-opacity: 0;
   }
-  70%{
+  70% {
     stroke-opacity: 1;
   }
-  80%{
+  80% {
     stroke-opacity: 0;
   }
-  90%{
+  90% {
     stroke-opacity: 1;
   }
-  100%{
+  100% {
     stroke-opacity: 0;
   }
 }
@@ -239,33 +240,33 @@
   20% {
     stroke-opacity: 1;
   }
-  30%{
+  30% {
     stroke-opacity: 0;
   }
-  40%{
+  40% {
     stroke-opacity: 1;
   }
-  50%{
+  50% {
     stroke-opacity: 0;
   }
-  60%{
+  60% {
     stroke-opacity: 1;
   }
-  70%{
+  70% {
     stroke-opacity: 0;
   }
-  80%{
+  80% {
     stroke-opacity: 1;
   }
-  90%{
+  90% {
     stroke-opacity: 0;
   }
-  100%{
+  100% {
     stroke-opacity: 1;
   }
 }
 
-.InceptionAnimation #sulamitten{
+.InceptionAnimation #sulamitten {
   animation: spinningtop 3s infinite;
 }
 
@@ -305,10 +306,9 @@
     opacity: 1;
   }
 
-  90%{
+  90% {
     opacity: 0;
   }
-
 }
 
 @keyframes lightningblink2 {
@@ -342,25 +342,26 @@
   90% {
     opacity: 0;
   }
-
 }
 
 @keyframes batmanmoving {
-
-  25%{
+  25% {
     transform: scale(1.1) translateX(-30px) translateY(-100px);
   }
 }
 
-.BatmanAnimation .st1 , .BatmanAnimation .st2{
+.BatmanAnimation .st1,
+.BatmanAnimation .st2 {
   animation: lightningblink1 3s infinite;
 }
 
-.BatmanAnimation .st2{
+.BatmanAnimation .st2 {
   animation: lightningblink2 3s infinite;
 }
 
-.BatmanAnimation #batboy,.BatmanAnimation .st3, .BatmanAnimation .st3{
+.BatmanAnimation #batboy,
+.BatmanAnimation .st3,
+.BatmanAnimation .st3 {
   animation: batmanmoving 3s infinite;
 }
 
@@ -402,33 +403,35 @@
 }
 
 .InceptionMood .zt2 {
- fill: rgb(255, 255, 255); 
+  fill: rgb(255, 255, 255);
 }
 
-.InceptionMood .zt6, 
+.InceptionMood .zt6,
 .InceptionMood .zt8,
 .InceptionMood .zt9 {
-  fill: rgb(26, 26, 26); 
+  fill: rgb(26, 26, 26);
 }
 
 .JamesbondMood .cls-2 {
-  fill:#5f6268;
+  fill: #5f6268;
 }
 
 .JamesbondMood .cls-3 {
-  fill:#252325;
+  fill: #252325;
 }
 
-.JamesbondMood .cls-13, .JamesbondMood .cls-99 {
-  fill: rgb(42, 42, 42)
+.JamesbondMood .cls-13,
+.JamesbondMood .cls-99 {
+  fill: rgb(42, 42, 42);
 }
 
-.JamesbondMood .cls-7, .JamesbondMood .cls-4 {
-  stroke:#231f20;
+.JamesbondMood .cls-7,
+.JamesbondMood .cls-4 {
+  stroke: #231f20;
 }
 
 .JamesbondMood .cls-6 {
-  stroke:#6d6e71
+  stroke: #6d6e71;
 }
 
 .BatmanMood .st0 {

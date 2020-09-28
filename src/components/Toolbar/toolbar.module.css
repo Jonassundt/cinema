@@ -1,162 +1,163 @@
-  .Toolbar, .ToolbarFullscreen {
-    padding: 20px;
-    background: #171a36;
-    border-radius: 20px;
-    text-align: center;   
-    margin-bottom: 60px; 
-    display: flex;
-    transition: filter 0.3s, margin 0.8s;
-    z-index: 15;
-    min-height: 113px;
+.Toolbar,
+.ToolbarFullscreen {
+  padding: 20px;
+  background: #171a36;
+  border-radius: 20px;
+  text-align: center;
+  margin-bottom: 60px;
+  display: flex;
+  transition: filter 0.3s, margin 0.8s;
+  z-index: 15;
+  min-height: 113px;
 }
 
 .ToolbarFullscreen {
-    position: sticky;
-    top: 45px;
-    margin-bottom: 40px;
-    margin-top: 40px;
-    filter: opacity(50%);
+  position: sticky;
+  top: 45px;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  filter: opacity(50%);
 }
 
 .ToolbarFullscreen:hover {
-    filter: opacity(100%)
+  filter: opacity(100%);
 }
 
 .Row {
-    display: flex;
-    margin-left: auto
+  display: flex;
+  margin-left: auto;
 }
 
 .Group {
-    font-size: 1.2em;
-    font-weight: bold;
-    background: #4d4d4d86;
-    width: 50px;
-    border-radius: 8px;
-    cursor: pointer;
-    user-select: none;
-    margin: 0 10px;
+  font-size: 1.2em;
+  font-weight: bold;
+  background: #4d4d4d86;
+  width: 50px;
+  border-radius: 8px;
+  cursor: pointer;
+  user-select: none;
+  margin: 0 10px;
 }
 
 .Group div:not(:nth-child(2)):hover {
-    font-size: 1.2em;
-    margin-top: -0.13em;
-    margin-bottom: -0.13em;
+  font-size: 1.2em;
+  margin-top: -0.13em;
+  margin-bottom: -0.13em;
 }
 
 .Toggle,
 .ButtonBar,
 .ButtonActive,
 .Button {
-    background: #4d4d4d86;
-    border-radius: 8px;
-    cursor: pointer;
-    user-select: none;
-    margin: 0 10px;
-    padding: 35px 20px;
-    transition: 0.1s;
-    min-width: 75px;
-    height: 30px;
-    margin-top: 10px;
+  background: #4d4d4d86;
+  border-radius: 8px;
+  cursor: pointer;
+  user-select: none;
+  margin: 0 10px;
+  padding: 35px 20px;
+  transition: 0.1s;
+  min-width: 75px;
+  height: 30px;
+  margin-top: 10px;
 }
 
 .Toggle {
-    background: rgba(114, 114, 114, 0.525);
-    border-radius: 0 8px 8px 0;
-    margin: 10px 10px 0 0;
-    min-width: 50px;
-    padding: 35px 20px;
+  background: rgba(114, 114, 114, 0.525);
+  border-radius: 0 8px 8px 0;
+  margin: 10px 10px 0 0;
+  min-width: 50px;
+  padding: 35px 20px;
 }
 
 .Toggle:first-child {
-    border-radius: 8px 0 0 8px;
-    margin: 10px 0 0 10px;
+  border-radius: 8px 0 0 8px;
+  margin: 10px 0 0 10px;
 }
 
 .Toggle:first-child:last-child {
-    border-radius: 8px;
-    margin: 10px 10px 0 0;
+  border-radius: 8px;
+  margin: 10px 10px 0 0;
 }
 
 .ButtonActive,
 .Group:hover,
 .ButtonBar:hover,
 .Button:hover {
-    background: rgba(119, 119, 119, 0.525);
+  background: rgba(119, 119, 119, 0.525);
 }
 
 .Toggle:hover {
-    background: rgba(153, 153, 153, 0.525);
+  background: rgba(153, 153, 153, 0.525);
 }
 
 .ButtonBar {
-    padding: 0;
-    overflow: hidden;
-    height: 100px;
-    margin-left: auto;
+  padding: 0;
+  overflow: hidden;
+  height: 100px;
+  margin-left: auto;
 }
 
 .Icon {
-    width: 30px;
-    height: 30px;
+  width: 30px;
+  height: 30px;
 }
 
 .SpotRow {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 180px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 180px;
 }
 
 .Spotlight {
-    box-shadow: 0px 150px 170px 70px rgb(214, 150, 0);
-    background: rgba(214, 178, 0, 0);
-    height: 2px;
-    width: 120px;
-    border-radius: 20px;
-    z-index: 10;
+  box-shadow: 0px 150px 170px 70px rgb(214, 150, 0);
+  background: rgba(214, 178, 0, 0);
+  height: 2px;
+  width: 120px;
+  border-radius: 20px;
+  z-index: 10;
 }
 
 .SlideBar {
-    background: #88888886;
-    padding: 35px 0 50px 0;
-    border-radius: 8px 0 0 8px;
+  background: #88888886;
+  padding: 35px 0 50px 0;
+  border-radius: 8px 0 0 8px;
 }
 
 .SlideText {
-    width: 160px;
+  width: 160px;
 }
 
-
 @media only screen and (max-width: 1100px) {
-	.Toolbar, .ToolbarFullscreen {
-      flex-wrap: wrap;
-      position: relative;
-    }
-    
-    .ToolbarFullscreen {
-        margin-top: 0;
-        margin-bottom: 100px;
-    }
-    
-    .ButtonBar,
-    .Toggle,
-    .ButtonActive,
-    .Button {
-        flex-grow: 1;
-        margin-left: 0;
-        padding: 20px 10px;
-    }
-    
-    .ButtonBar {
-        padding: 0;
-        height: 70px;
-    }
-    
-    .SlideBar {
-        padding: 25px 0px;
-    }
-    
-    .ToolbarFullscreen {
-        filter: opacity(100%);
-    }
+  .Toolbar,
+  .ToolbarFullscreen {
+    flex-wrap: wrap;
+    position: relative;
   }
+
+  .ToolbarFullscreen {
+    margin-top: 0;
+    margin-bottom: 100px;
+  }
+
+  .ButtonBar,
+  .Toggle,
+  .ButtonActive,
+  .Button {
+    flex-grow: 1;
+    margin-left: 0;
+    padding: 20px 10px;
+  }
+
+  .ButtonBar {
+    padding: 0;
+    height: 70px;
+  }
+
+  .SlideBar {
+    padding: 25px 0px;
+  }
+
+  .ToolbarFullscreen {
+    filter: opacity(100%);
+  }
+}

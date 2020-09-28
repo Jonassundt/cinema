@@ -1,94 +1,101 @@
 .Gallery {
-    display: flex;
-    padding-top: 80px;
-	margin-bottom: 80px;
-	padding-bottom: 20px;
+  display: flex;
+  padding-top: 80px;
+  margin-bottom: 80px;
+  padding-bottom: 20px;
 }
 
 .Gallery::-webkit-scrollbar {
-	height: 0.6em;
-  }
-   
+  height: 0.6em;
+}
+
 .Gallery::-webkit-scrollbar-track {
-	background-color: rgb(0, 0, 40);
-  }
-   
+  background-color: rgb(0, 0, 40);
+}
+
 .Gallery::-webkit-scrollbar-thumb {
-	background-color: #5d5d5d8e;
-	margin-right: 5px;
-	border-radius: 6px;
-  }
+  background-color: #5d5d5d8e;
+  margin-right: 5px;
+  border-radius: 6px;
+}
 
 .Thumbnail {
-    background: #3e3f47ce;
-	border-radius: 20px;
-    margin-right: 30px;
-    box-shadow: -20px 0 60px rgb(20, 20, 20);
-	transition: 0.2s;
+  background: #3e3f47ce;
+  border-radius: 20px;
+  margin-right: 30px;
+  box-shadow: -20px 0 60px rgb(20, 20, 20);
+  transition: 0.2s;
 }
 
 .Thumbnail:hover {
-    cursor: pointer;
-    transform: translateY(-20px) skew(-1deg);
-    filter: brightness(110%)
+  cursor: pointer;
+  transform: translateY(-20px) skew(-1deg);
+  filter: brightness(110%);
 }
 
 .Thumbnail:not(:hover) {
-    filter: brightness(75%)
+  filter: brightness(75%);
 }
 
-.Thumbnail:hover~.Thumbnail {
-	transform: translateX(130px);
+.Thumbnail:hover ~ .Thumbnail {
+  transform: translateX(130px);
 }
 
 .Thumbnail:not(:first-child) {
-    margin-left: -130px;
+  margin-left: -130px;
 }
 
-
 .Thumbnail:hover div {
-	position: relative;
+  position: relative;
 }
 
 .Thumbnail:hover div::before {
-	position: absolute;
-	top: 0;
-	left: -95%;
-	z-index: 2;
-	display: block;
-	content: '';
-	width: 50%;
-	height: 100%;
-	background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
-	background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
-	-webkit-transform: skewX(-25deg);
-	transform: skewX(-25deg);
+  position: absolute;
+  top: 0;
+  left: -95%;
+  z-index: 2;
+  display: block;
+  content: "";
+  width: 50%;
+  height: 100%;
+  background: -webkit-linear-gradient(
+    left,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 100%
+  );
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 100%
+  );
+  -webkit-transform: skewX(-25deg);
+  transform: skewX(-25deg);
 }
 
 .Thumbnail:hover div:hover::before {
-	-webkit-animation: shine .75s;
-	animation: shine .75s;
+  -webkit-animation: shine 0.75s;
+  animation: shine 0.75s;
 }
 
 @-webkit-keyframes shine {
-	100% {
-		left: 125%;
-	}
+  100% {
+    left: 125%;
+  }
 }
 
 @keyframes shine {
-	100% {
-		left: 125%;
-	}
+  100% {
+    left: 125%;
+  }
 }
 
 .SmallPoster {
-    border-radius: 20px;
-    overflow: hidden;
+  border-radius: 20px;
+  overflow: hidden;
 }
 
-@media only screen and (max-width: 1570px) {
-	.Gallery {
-	  overflow-x:auto;
-	}
+@media only screen and (max-width: 1450px) {
+  .Gallery {
+    overflow-x: auto;
   }
+}

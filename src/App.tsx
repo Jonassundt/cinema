@@ -10,9 +10,9 @@ import "./index.css";
 
 function App() {
   /*main component, using context to handle website state.
-  * Initial states can be seen in Parameters.tsx
-  *
-  */
+   * Initial states can be seen in Parameters.tsx
+   *
+   */
   const [params, setParams] = useState({
     //fetches settings from sessionStorage if there are settings to fetch.
     light: parseInt(sessionStorage.getItem("light") || "40"),
@@ -23,7 +23,8 @@ function App() {
     slideshow: false,
     posterIndex: parseInt(sessionStorage.getItem("posterIndex") || "0"),
     favorites: JSON.parse(localStorage.getItem("favorites") || "[]"),
-    showFavorites: (sessionStorage.getItem("showFavorites") || "false") === "true",
+    showFavorites:
+      (sessionStorage.getItem("showFavorites") || "false") === "true",
     loading: true,
     mood: (sessionStorage.getItem("mood") || "false") === "true",
   });
@@ -43,8 +44,10 @@ function App() {
           {params.fullscreen ? (
             <div className="TopRow" />
           ) : (
-              <div className="App-header">Webutvikling Prosjekt 2, "Moderne Hjemmekino"</div>
-            )}
+            <div className="App-header">
+              Webutvikling Prosjekt 2, "Moderne Hjemmekino"
+            </div>
+          )}
           <Toolbar />
           <Poster />
           {params.fullscreen ? null : (

@@ -15,11 +15,11 @@ type PosterElementState = {
   audioIndex: number;
 };
 
-class PosterElement extends React.Component<
 // Displays the poster that is to be showed.
+class PosterElement extends React.Component<
   PosterElementProps,
   PosterElementState
-  > {
+> {
   constructor(props: PosterElementProps) {
     super(props);
     this.state = { playing: false, audio: null, audioIndex: -1 };
@@ -29,10 +29,10 @@ class PosterElement extends React.Component<
 
   playAudio = () => {
     /*Method for playing audio.
-    * If this.state.playing is false when playAudio is called, load the correct sound and play it in a loop.
-    *
-    * 
-    */
+     * If this.state.playing is false when playAudio is called, load the correct sound and play it in a loop.
+     *
+     *
+     */
     if (!this.state.playing) {
       this.state.audio.load();
       this.state.audio.play();
@@ -83,7 +83,10 @@ class PosterElement extends React.Component<
     const props = {
       height: this.props.height,
       width: this.props.height / 1.333,
-      className: `${this.context.params.animation ? animationName : ""}` + " " + `${this.context.params.mood ? moodName : ""}`,
+      className:
+        `${this.context.params.animation ? animationName : ""}` +
+        " " +
+        `${this.context.params.mood ? moodName : ""}`,
     };
     return React.cloneElement(this.props.poster, props);
   }
