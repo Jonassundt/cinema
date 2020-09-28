@@ -99,7 +99,7 @@ i løsningene vi hadde sett for oss, noe som bidro til at websiden ble så bra s
 
 ### Innhold
 
-Musikken er utdrag fra original filmmusikk. Har tillatelse til å bruke dette.
+Musikken er utdrag fra original filmmusikk. Brukt med avklaring fra faglærer.
 
 # Prosjekt 2
 
