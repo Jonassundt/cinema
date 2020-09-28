@@ -82,7 +82,10 @@ mer kontroll og oversikt over koden ved innføring av variabeltyper.
 
 ### Testing
 
-TODO
+Vi har testet appen vår ved hjelp av rammeverket Jest, og laget snapshot-tests for hver komponent. Disse vil detektere om noe ikke vises slik det skal, men dekker kun elementstrukturen,
+ikke om context og parametre oppfører seg som de skal. I tillegg har vi testet i Edge, Firefox, Opera, og Chrome på Windows og Safari. I Chrome har vi brukt "Inspiser" til å simulere alle mulige skjermstørrelser, som HD-TV, nettbrett og mobiltelefon.
+Vi har kjørt siden i Chrome på Android- og iOS-telefonene våre for å verifisere at de kjører på disse. Dette har fungert utmerket.
+På Safari derimot, både macOS og iOS, fungerer animasjonene dårlig. Dermed oppfordrer vi til å bruke Chrome eller tilsvarende fremfor Safari.
 
 ### Bruk av Git, Koding
 
