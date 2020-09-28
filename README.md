@@ -33,13 +33,13 @@ Piltastene som benyttes for å bla gjennom de forskjellige filmplakatene, er roy
 og hentet fra [material.io](https://material.io/resources/icons/?style=baseline)
 
 Vi har valgt å benytte oss utelukkende av tekst i knapper i stedet for symboler.
-Dette valget ble tatt for å utelukke misforståelser basert på ambiguøse og vage symboler.
-Knapper med tekst i forklarer svært bra hvilken funksjonalitet som omhandles.
+Dette valget ble tatt for å utelukke misforståelser basert på ambiguøse og vage symboler,
+og gruppen har på bakgrunn av dette konkludert med at tekst i knappene fungerer hensiktsmessig i denne sammenheng.
 
 ### SVG
 
 Teamet benyttet seg utelukkende av SVG-formatet for å lage bildene på nettsiden.
-Disse ble lagd ved hjelp av Adobe Illustrator, grunnet mulighet for mer komplekse illustrasjoner enn
+Disse ble laget ved hjelp av Adobe Illustrator, grunnet mulighet for mer komplekse illustrasjoner enn
 ved løsningen benyttet i prosjektoppgave 1.
 Animasjonene ved bildene er laget ved å bruk av css-keyframes, og ved å manipulere de forskjellige elementene SVG-bildene består av.
 Om brukeren ønsker, kan hen skru av animasjonene ved å trykke på knappen "animasjoner".
@@ -50,10 +50,10 @@ Vi valgte å løse det på denne måten fordi det er standard prosedyre for anim
 ### AJAX
 
 Datainnhenting fra API ble gjort med Asynchronous JavaScript.
-For å aksessere API-et måtte teamet applye for en API-nøkkel, noe vi heldigvis fikk.
+For å aksessere API-et måtte teamet sende forespørsel for en API-nøkkel, noe vi heldigvis fikk.
 Følgelig ligger API-nøkkelen i state i Components/Poster/fetchData.tsx.
 Dette er ikke best practice i forhold til sikkerhet, men med tanke på at vi ikke har en backend er dette løsningen vi har gått for.
-På denne måten oppfyller websiden alle krav til AJAX.
+På denne måten lastes REST-API'et inn dynamisk.
 
 ### HTML Web Storage
 
