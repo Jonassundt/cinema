@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 24.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 1000 1333" style="enable-background:new 0 0 1000 1500;" xml:space="preserve">
+	 viewBox="0 1 1000 1333" style="enable-background:new 0 0 1000 1500;" xml:space="preserve">
 <style type="text/css">
+  @font-face{font-family: ArialMT; src: url('/fonts/ArialMT.woff');}
 	.st0{fill:url(#SVGID_1_);stroke:url(#SVGID_2_);stroke-miterlimit:10;}
 	.st1{fill:#C0EDA4;}
 	.st2{fill:#D5E8BF;}
 	.st3{fill:#FFFFFF;}
 	.st4{fill:#58595B;}
-	.st5{font-family:'ArialMT';}
+	.st5{font-family:ArialMT;}
 	.st6{font-size:234.3192px;}
 	.st7{fill:none;stroke:#000000;stroke-miterlimit:10;}
 </style>
