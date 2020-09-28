@@ -79,7 +79,7 @@
   }
   20% {
     transform: translateX(170px) translateY(-500px);
-    fill: rgb(255, 153, 153);
+    fill: rgb(255, 238, 238);
   }
   25% {
     transform: translateX(0px) translateY(0px) rotate(-2deg);
@@ -440,4 +440,12 @@
 
 .ShawshankMood #svg_5 {
   fill: rgb(2, 26, 58);
+}
+
+.StarwarsMood #svg_59 {
+  fill: rgb(0, 79, 80);
+}
+
+.StarwarsMood #sword {
+  fill: rgb(0, 225, 0);
 }
