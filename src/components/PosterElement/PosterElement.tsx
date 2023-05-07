@@ -51,7 +51,7 @@ class PosterElement extends React.Component<
   componentDidMount() {
     //Lifecycle method to initiate playing music related to the given displayed poster.
     //Uses naming convention in mp3files to play the correct soundtrack.
-    const audio = new Audio(`/sounds/${this.props.poster.props.name}.mp3`);
+    const audio = new Audio(`sounds/${this.props.poster.props.name}.mp3`);
     this.setState({ audio, audioIndex: this.context.params.posterIndex });
     if (this.context.params.volume) {
       this.playAudio();
@@ -69,7 +69,7 @@ class PosterElement extends React.Component<
       }
     } else {
       this.state.audio.pause();
-      const audio = new Audio(`/sounds/${this.props.poster.props.name}.mp3`);
+      const audio = new Audio(`sounds/${this.props.poster.props.name}.mp3`);
       this.setState({
         playing: false,
         audio,

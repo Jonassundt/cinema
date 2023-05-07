@@ -109,7 +109,7 @@ function Toolbar() {
       >
         {/* Lyssetting */}
         <div>
-          <img className={styles.Icon} src={"/icons/brightness.svg"} alt="" />
+          <img className={styles.Icon} src={"icons/brightness.svg"} alt="" />
           <div className={styles.Group}>
             <div
               onClick={() => params.light < 77 && setLight(params.light + 4)}
@@ -126,7 +126,7 @@ function Toolbar() {
         </div>
         {/* Volum */}
         <div>
-          <img className={styles.Icon} src={"/icons/volume.svg"} alt="" />
+          <img className={styles.Icon} src={"icons/volume.svg"} alt="" />
           <div className={styles.Group}>
             <div
               onClick={() => params.volume < 10 && setVolume(params.volume + 1)}

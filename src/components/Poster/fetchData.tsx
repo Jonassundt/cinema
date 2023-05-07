@@ -23,6 +23,7 @@ export default class fetchMovie extends React.Component {
     loading: true,
     movie: { title: "", tagline: "", overview: "" },
     movieIds,
+    //Ja, du ser rett. API-nøkkelen ligger her og lurer.
     apiKey: "4d785ede4f71452009daf3f954680323",
     posterIndex: -1,
   };
@@ -59,12 +60,12 @@ export default class fetchMovie extends React.Component {
         {this.state.loading || !this.state.movie ? (
           <div>Loading...</div>
         ) : (
-            <div className={styles.Container}>
-              <div className={styles.Tagline}>"{this.state.movie.tagline}"</div>
-              <div className={styles.Title}>{this.state.movie.title}</div>
-              <div className={styles.Overview}>{this.state.movie.overview}</div>
-            </div>
-          )}
+          <div className={styles.Container}>
+            <div className={styles.Tagline}>"{this.state.movie.tagline}"</div>
+            <div className={styles.Title}>{this.state.movie.title}</div>
+            <div className={styles.Overview}>{this.state.movie.overview}</div>
+          </div>
+        )}
       </div>
     );
   }

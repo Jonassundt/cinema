@@ -71,16 +71,16 @@ function Poster() {
     let url;
     if (number < 0.1) {
       if (params.mood) {
-        url = "/sounds/Zombie.mp3";
+        url = "sounds/Zombie.mp3";
       }
       else {
         number = number * 10;
         if (number > 0.6) {
-          url = "/sounds/villager.mp3";
+          url = "sounds/villager.mp3";
         } else if (number > 0.3) {
-          url = "/sounds/o.mp3";
+          url = "sounds/o.mp3";
         } else {
-          url = "/sounds/pig.mp3";
+          url = "sounds/pig.mp3";
         }
       }
       const audio = new Audio(url);
