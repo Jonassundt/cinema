@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/cinema/static/css/main.1be9a15c.chunk.css",
+    "main.js": "/cinema/static/js/main.a99e60ba.chunk.js",
+    "main.js.map": "/cinema/static/js/main.a99e60ba.chunk.js.map",
+    "runtime-main.js": "/cinema/static/js/runtime-main.31808535.js",
+    "runtime-main.js.map": "/cinema/static/js/runtime-main.31808535.js.map",
+    "static/js/2.f0eca474.chunk.js": "/cinema/static/js/2.f0eca474.chunk.js",
+    "static/js/2.f0eca474.chunk.js.map": "/cinema/static/js/2.f0eca474.chunk.js.map",
+    "index.html": "/cinema/index.html",
+    "precache-manifest.50a625feec94b43681384ef6a0c7ff1c.js": "/cinema/precache-manifest.50a625feec94b43681384ef6a0c7ff1c.js",
+    "service-worker.js": "/cinema/service-worker.js",
+    "static/css/main.1be9a15c.chunk.css.map": "/cinema/static/css/main.1be9a15c.chunk.css.map",
+    "static/js/2.f0eca474.chunk.js.LICENSE.txt": "/cinema/static/js/2.f0eca474.chunk.js.LICENSE.txt",
+    "static/media/batman.c4e8b5c4.svg": "/cinema/static/media/batman.c4e8b5c4.svg",
+    "static/media/inception.1b65982a.svg": "/cinema/static/media/inception.1b65982a.svg",
+    "static/media/interstellar.b31a791b.svg": "/cinema/static/media/interstellar.b31a791b.svg",
+    "static/media/jamesbond.672e4dbd.svg": "/cinema/static/media/jamesbond.672e4dbd.svg",
+    "static/media/shawshank.5e06b7ff.svg": "/cinema/static/media/shawshank.5e06b7ff.svg",
+    "static/media/starwars.48213ee3.svg": "/cinema/static/media/starwars.48213ee3.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.31808535.js",
+    "static/js/2.f0eca474.chunk.js",
+    "static/css/main.1be9a15c.chunk.css",
+    "static/js/main.a99e60ba.chunk.js"
+  ]
+}
